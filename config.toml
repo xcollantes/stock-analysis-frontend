@@ -1,0 +1,11 @@
+[server]
+runOnSave = false
+
+[logger]
+level = "info"
+messageFormat = "%(message)s"
+
+[browser]
+gatherUsageStats = false
+
+[theme]
