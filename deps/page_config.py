@@ -11,7 +11,7 @@ class PageConfig:
         layout: str = "wide",
         initial_sidebar_state: str = "expanded",
         help_link: str = "",
-        report_bug_link: str = "",
+        report_bug_link: str = "https://github.com/xcollantes/stock-analysis-frontend/issues/new/choose",
         about_link: str = "",
     ) -> None:
         self.page_title = page_title
