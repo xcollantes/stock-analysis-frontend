@@ -9,3 +9,6 @@ messageFormat = "%(message)s"
 gatherUsageStats = false
 
 [theme]
+base="dark"
+primaryColor="#00c805"
+font="sans serif"
