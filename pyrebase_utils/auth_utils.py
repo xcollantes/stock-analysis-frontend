@@ -5,7 +5,7 @@ import pyrebase
 
 
 config = {
-    "apiKey": st.secrets.pyrebase_firebase.apikey,
+    "apiKey": st.secrets.pyrebase_firebase.apiKey,
     "authDomain": st.secrets.pyrebase_firebase.authDomain,
     "databaseURL": st.secrets.pyrebase_firebase.databaseURL,
     "storageBucket": st.secrets.pyrebase_firebase.storageBucket,
@@ -23,6 +23,6 @@ def get_auth():
 def auth_user(email: str, password: str) -> any:
     """Determine authentication for a user."""
 
-    user = auth.sign_in_with_email_and_password(email, password)
+    user = get_auth().sign_in_with_email_and_password(email, password)
     print(user)
     return user
