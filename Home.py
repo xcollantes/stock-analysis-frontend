@@ -13,8 +13,8 @@ PageConfig(layout="centered").get_config()
 show_pages(
     [
         Page("Home.py", "Getting started", ":house:"),
-        Page("pages/Stock.py", "Search symbol", ":mag:"),
-        Page("pages/Drops.py", "Top drops", ":chart_with_downwards_trend:"),
+        Page("pages/stock.py", "Search symbol", ":mag:"),
+        Page("pages/drops.py", "Top drops", ":chart_with_downwards_trend:"),
     ]
 )
 
