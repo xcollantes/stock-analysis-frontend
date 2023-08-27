@@ -7,9 +7,12 @@ from st_pages import Page, show_pages
 import streamlit as st
 
 from deps.page_config import PageConfig
+from passphrase.utils import is_auth
 
 
 PageConfig(layout="centered").get_config()
+url_args = st.experimental_get_query_params()
+
 show_pages(
     [
         Page("Home.py", "Getting started", ":house:"),
@@ -34,4 +37,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     logging.info("%s running", os.path.basename(__file__))
-    main()
+    is_auth(main, url_args)
