@@ -4,14 +4,17 @@
 import streamlit as st
 
 from deps.page_config import PageConfig
-from pyrebase_utils.auth_utils import auth_user, get_auth, reset_password
+from pyrebase_utils.auth_utils import auth_user, get_auth, redirect, reset_password
 
 PageConfig(initial_sidebar_state="collapsed", layout="centered").get_config()
 
 
 def main():
     # show_create_account: bool = st.button("Create account", use_container_width=True)
-
+    # st.markdown(
+    #     '<a href="/foo" target=_top>Another Page</a>',
+    #     unsafe_allow_html=True,
+    # )
     with st.form(key="login_user"):
         email = st.text_input(label="Email")
         password = st.text_input(label="Password", type="password")
@@ -23,6 +26,7 @@ def main():
             if email and password:
                 auth_user(email, password)
                 st.success("Login success!")
+                redirect("Getting%20started")
 
             else:
                 st.error("Email and password needed.")
