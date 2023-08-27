@@ -9,7 +9,7 @@ from deps.page_config import PageConfig
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
-PageConfig(report_bug_link="https://google.com/search?q=help").get_config()
+PageConfig().get_config()
 # url_args = st.experimental_get_query_params()
 
 
