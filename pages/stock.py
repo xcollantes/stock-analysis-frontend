@@ -6,11 +6,13 @@ import re
 import streamlit as st
 from deps.charts import show_historical_chart
 from deps.page_config import PageConfig
+from passphrase.utils import is_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
+url_args = st.experimental_get_query_params()
+
 PageConfig().get_config()
-# url_args = st.experimental_get_query_params()
 
 
 def main() -> None:
@@ -56,4 +58,4 @@ def symbol_has_error(symbol_query: str) -> str:
 
 if __name__ == "__main__":
     logging.info("%s running", os.path.basename(__file__))
-    main()
+    is_auth(main, url_args)

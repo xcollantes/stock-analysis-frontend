@@ -12,8 +12,10 @@ from deps.yahoo import (
     get_yahoo_metrics,
 )
 from deps.charts import show_historical_chart
+from passphrase.utils import is_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
+url_args = st.experimental_get_query_params()
 
 PageConfig().get_config()
 
@@ -146,4 +148,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     logging.info("Running")
-    main()
+    is_auth(main, url_args)
