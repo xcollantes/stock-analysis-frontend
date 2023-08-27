@@ -6,6 +6,7 @@ import re
 import streamlit as st
 from deps.charts import show_historical_chart
 from deps.page_config import PageConfig
+from pyrebase_utils.auth_utils import get_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
@@ -56,4 +57,5 @@ def symbol_has_error(symbol_query: str) -> str:
 
 if __name__ == "__main__":
     logging.info("%s running", os.path.basename(__file__))
+    print("GET AUTH: ", get_auth().current_user)
     main()
