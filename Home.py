@@ -15,7 +15,7 @@ show_pages(
         Page("Home.py", "Getting started", ":house:"),
         Page("pages/stock.py", "Search symbol", ":mag:"),
         Page("pages/drops.py", "Top drops", ":chart_with_downwards_trend:"),
-        Page("pages/login.py", "LOGIN", ":chart_with_downwards_trend:"),
+        Page("pages/login.py", "Login"),
     ]
 )
 

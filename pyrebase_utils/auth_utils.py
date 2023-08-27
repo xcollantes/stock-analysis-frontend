@@ -20,6 +20,11 @@ def get_auth():
     return firebase_app.auth()
 
 
+def reset_password(email: str):
+    """Forgot password."""
+    get_auth().send_password_reset_email(email)
+
+
 def auth_user(email: str, password: str) -> any:
     """Determine authentication for a user."""
 
