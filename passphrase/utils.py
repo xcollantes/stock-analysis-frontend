@@ -22,10 +22,10 @@ def is_auth(main, url_args):
         return access_denied()
 
 
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def matches_passphrase(candidate: str) -> bool:
     """Check if passphrase is correct."""
-    with st.spinner("Verifying ..."):
+    with st.spinner("Verifying authentication ..."):
         return get_passphrase() == candidate
 
 
