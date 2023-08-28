@@ -34,6 +34,14 @@ def main() -> None:
         st.write("## Stocks")
         st.write("Find information on a specific stock by symbol.")
 
+    st.markdown(
+        """<style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        </style>""",
+        unsafe_allow_html=True,
+    )
+
 
 if __name__ == "__main__":
     logging.info("%s running", os.path.basename(__file__))
