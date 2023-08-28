@@ -33,12 +33,21 @@ class PageConfig:
         if self.about_link:
             menu_items_section["About"] = self.about_link
 
-        return st.set_page_config(
-            self.page_title,
-            self.page_icon,
-            self.layout,
-            self.initial_sidebar_state,
-            menu_items=menu_items_section,
+        return (
+            st.set_page_config(
+                self.page_title,
+                self.page_icon,
+                self.layout,
+                self.initial_sidebar_state,
+                menu_items=menu_items_section,
+            ),
+            st.markdown(
+                """<style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        </style>""",
+                unsafe_allow_html=True,
+            ),
         )
 
 
