@@ -6,7 +6,7 @@ import streamlit as st
 import pandas as pd
 
 
-@st.cache_data
+@st.cache_data(show_spinner="Getting static data ...")
 def get_static_company_data() -> pd.DataFrame:
     """Get stock data."""
     logging.info("API call: us_tickers.csv")

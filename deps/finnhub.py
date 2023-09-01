@@ -11,7 +11,7 @@ import streamlit as st
 FINNHUB_KEY: str = st.secrets.finnhub.apikey
 
 
-@st.cache_data
+@st.cache_data(show_spinner="Querying competitor data ...")
 def get_competitors(symbol: str) -> pd.Series:
     """Get list of peers of a given company.
 

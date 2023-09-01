@@ -18,7 +18,7 @@ def get_earnings_surprises_fmp(symbol: str) -> pd.DataFrame:
     return pd.json_normalize(response.json())
 
 
-@st.cache_data
+@st.cache_data(show_spinner="Finding biggest drops in market ...")
 def get_top_losing(percent_threshold: float) -> pd.DataFrame:
     """Return stocks with largest drops from open to close price.
 
