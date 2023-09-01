@@ -141,9 +141,21 @@ def main() -> None:
         .highlight_null(color="gray")
     )
 
-    selection = False
-    if selection:
-        show_historical_chart("GOOG", 10)
+    st.data_editor(
+        show_drops_df,
+        column_config={
+            "ClosingPrice": st.column_config.ProgressColumn(
+                "ClosingPrice",
+                format="$%.2f",
+                min_value=show_drops_df["52WeekLow"].min(),
+                max_value=show_drops_df["52WeekHigh"].max(),
+            )
+        },
+    )
+
+    # selection = False
+    # if selection:
+    #     show_historical_chart("GOOG", 10)
 
 
 if __name__ == "__main__":
