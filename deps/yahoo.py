@@ -11,7 +11,7 @@ import yfinance as yf
 from deps.utils import dict_check
 
 
-@st.cache_data(persist=True)
+@st.cache_data(show_spinner="DEPRECATED ...")
 def get_yahoo_metrics(symbol: str) -> tuple[str, str, str, str]:
     """DEPRECATED. Get metrics for a company by calling API.
 
@@ -27,7 +27,7 @@ def get_yahoo_metrics(symbol: str) -> tuple[str, str, str, str]:
     )
 
 
-@st.cache_data
+@st.cache_data(show_spinner="Querying earnings results ...")
 def get_earnings_surprises_yahoo(
     symbol: str, days_ago: int = 365, show_next: bool = True
 ) -> pd.DataFrame:
@@ -85,7 +85,7 @@ def get_earnings_surprises_yahoo(
     return result
 
 
-@st.cache_data
+@st.cache_data(show_spinner="Querying historical prices ...")
 def get_historic_prices(ticker_symbol: str, days_ago: int) -> pd.DataFrame:
     """Given a date range, returns historical price range.
 
@@ -111,7 +111,7 @@ def get_historic_prices(ticker_symbol: str, days_ago: int) -> pd.DataFrame:
     return history
 
 
-@st.cache_data
+@st.cache_data(show_spinner="Converting metrics data frame ...")
 def handle_filter_metrics(ratio_df: pd.DataFrame) -> pd.DataFrame:
     """Get only specific column metrics."""
     result_df: pd.DataFrame = pd.DataFrame()
@@ -134,7 +134,7 @@ def handle_filter_metrics(ratio_df: pd.DataFrame) -> pd.DataFrame:
     return result_df
 
 
-@st.cache_data
+@st.cache_data(show_spinner="Querying company data ...")
 def get_company_yahoo(symbol: str) -> pd.DataFrame:
     """Get all financial metrics, company details, and filing info for a company."""
     result_df: pd.DataFrame = pd.DataFrame()
