@@ -12,7 +12,7 @@ from deps.utils import dict_check
 
 
 @st.cache_data(show_spinner="Query company metrics ...")
-def get_yahoo_metrics(symbol: str) -> tuple[str, str, str, str]:
+def get_yahoo_overview_company_metrics(symbol: str) -> tuple[str, str, str, str]:
     """Get specific metrics for a company by calling API.
 
     These metrics change over time as opposed to the static company data.

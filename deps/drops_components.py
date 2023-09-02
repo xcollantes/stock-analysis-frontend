@@ -2,6 +2,7 @@
 
 
 import pandas as pd
+from deps.yahoo import get_yahoo_overview_company_metrics
 import streamlit as st
 
 from deps.fmp import get_top_losing
@@ -31,16 +32,62 @@ class TopDrops:
         self.sector = sector
         self.industry = industry
 
+    def get_drop_dataframe(self) -> pd.DataFrame:
+        """Return largest drops of the day in DataFrame stylized."""
+        return self._format_drop_dataframe(self._create_drop_dataframe())
+
     def _create_drop_dataframe(self) -> pd.DataFrame:
         """Join drops DataFrame with company data."""
 
         # Top drops for the day
         top_losses_df: pd.DataFrame = get_top_losing(self.drop_percent)
+        static_co_df: pd.DataFrame = get_static_company_data()
+
+        top_losses_df = (
+            top_losses_df.merge(
+                static_co_df,
+                how="left",
+                on=["symbol"],
+            )
+            .rename(columns={"name_x": "name"})
+            .drop(labels=["name_y"], axis=1)  # Remove duplicate column from merge
+        )
+
+        if self.sector:
+            top_losses_df = top_losses_df[top_losses_df["sector"] == self.sector]
+
+        if self.industry:
+            top_losses_df = top_losses_df[top_losses_df["industry"] == self.industry]
+
+        if self.sector or self.industry:
+            top_losses_df = top_losses_df.reset_index(drop=True)
+
+        # Append data from Yahoo Finance
+        #
+        # Use intermediary DataFrame and concat. This is faster than joining
+        # onto the `top_losses_df` DataFrame.
+        yahoo_intermediary_df = pd.DataFrame(
+            {"marketCap": [], "volume": [], "52WeekLow": [], "52WeekHigh": []}
+        )
+
+        for symbol in top_losses_df["symbol"]:
+            overview_info_df: pd.DataFrame = get_yahoo_overview_company_metrics(symbol)
+            yahoo_intermediary_df.loc[len(yahoo_intermediary_df)] = [
+                overview_info_df[0],
+                overview_info_df[1],
+                overview_info_df[2],
+                overview_info_df[3],
+            ]
+
+        top_losses_df = pd.concat([top_losses_df, yahoo_intermediary_df], axis=1)
+
         top_losses_df = top_losses_df.sort_values(
             by=["changesPercentage"], ascending=True, ignore_index=True
         )
 
-    def _format_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
+        return top_losses_df
+
+    def _format_drop_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
         """Add styling to DataFrame."""
         return (
             df.style.format(
@@ -57,102 +104,3 @@ class TopDrops:
             .background_gradient(subset=["MarketCap"], cmap="Greens")
             .highlight_null(color="gray")
         )
-
-    # Merge with static set containing company data
-    static_co_df: pd.DataFrame = get_static_company_data()
-    top_loss_static_df: pd.DataFrame = top_losses_df.merge(
-        static_co_df[
-            [
-                "symbol",
-                "exchange",
-                "exchangeShortName",
-                "type",
-                "sector",
-                "industry",
-                "description",
-                "website",
-            ]
-        ],
-        how="left",
-        on="symbol",
-    )
-
-    # Rename fields to match appended data later
-    top_loss_static_df: pd.DataFrame = top_loss_static_df.rename(
-        columns={
-            # "symbol": "Symbol",  # Causes KeyError
-            "name": "Name",
-            "change": "DayChange",
-            "price": "ClosingPrice",
-            "changesPercentage": "PercentDayChange",
-            "exchange": "Exchange",
-            "exchangeShortName": "ExchangeShortName",
-            "sector": "Sector",
-            "industry": "Industry",
-            "description": "Description",
-            "type": "Type",
-            "website": "Website",
-        }
-    )
-
-    def _filter_drops(self) -> pd.DataFrame:
-        """Filter by sector. Filter here to reduce calls to APIs."""
-        top_loss_static_df: pd.DataFrame = top_loss_static_df[
-            (top_loss_static_df["Type"] == self.industry)
-            & (top_loss_static_df["Sector"] == self.sector)
-        ].reset_index(drop=True)
-
-    # Append data from Yahoo Finance
-    # yahoo_intermediary_df = pd.DataFrame(
-    #     {"MarketCap": [], "Volume": [], "52WeekLow": [], "52WeekHigh": []}
-    # )
-
-    for symbol in top_loss_static_df["symbol"]:
-        info = get_yahoo_metrics(symbol)
-        top_loss_static_df.join(info, on=["symbol"])
-
-        # yahoo_intermediary_df.loc[len(yahoo_intermediary_df)] = [
-        #     info[0],
-        #     info[1],
-        #     info[2],
-        #     info[3],
-        # ]
-
-    # top_loss_static_yahoo_df: pd.DataFrame = pd.concat(
-    #     [top_loss_static_df, yahoo_intermediary_df], axis=1
-    # )
-
-    top_loss_static_yahoo_df
-
-    # Create copy because .rename(columns={"symbol": "Symbol"}) causes KeyError
-    # in previous DataFrames
-    top_loss_static_yahoo_df.rename(columns={"symbol": "Symbol"}, inplace=True)
-
-    show_drops_df: pd.DataFrame = top_loss_static_yahoo_df[
-        [
-            "Symbol",
-            "Name",
-            "PercentDayChange",
-            "52WeekLow",
-            "ClosingPrice",
-            "52WeekHigh",
-            "MarketCap",
-            "Volume",
-            "Sector",
-            "Industry",
-            "Type",
-            "Exchange",
-        ]
-    ]
-
-    st.data_editor(
-        show_drops_df,
-        column_config={
-            "ClosingPrice": st.column_config.ProgressColumn(
-                "ClosingPrice",
-                format="$%.2f",
-                min_value=show_drops_df["52WeekLow"].min(),
-                max_value=show_drops_df["52WeekHigh"].max(),
-            )
-        },
-    )

@@ -2,16 +2,10 @@
 
 import logging
 
-import pandas as pd
+from deps.drops_components import TopDrops
 import streamlit as st
-from deps.fmp import get_top_losing
 
-from deps.github import get_static_company_data
 from deps.page_config import PageConfig
-from deps.yahoo import (
-    get_company_yahoo,
-    get_yahoo_metrics,
-)
 from passphrase.utils import is_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
@@ -25,6 +19,9 @@ def main() -> None:
     st.write(
         "Find the largest shocks of the day in a market may lead to finding an undervalued stock."
     )
+
+    drops = TopDrops(0.10)
+    st.dataframe(drops.get_drop_dataframe())
 
     # selection = False
     # if selection:
