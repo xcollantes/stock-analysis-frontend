@@ -2,8 +2,8 @@
 
 
 import pandas as pd
-from deps.yahoo import get_yahoo_overview_company_metrics
 import streamlit as st
+from deps.yahoo import get_yahoo_overview_company_metrics
 
 from deps.fmp import get_top_losing
 from deps.github import get_static_company_data
@@ -34,7 +34,74 @@ class TopDrops:
 
     def get_drop_dataframe(self) -> pd.DataFrame:
         """Return largest drops of the day in DataFrame stylized."""
-        return self._format_drop_dataframe(self._create_drop_dataframe())
+        df: pd.DataFrame = self._create_drop_dataframe()
+
+        df = df[
+            [
+                "symbol",
+                "name",
+                "changesPercentage",
+                "change",
+                "52WeekLow",
+                "price",
+                "52WeekHigh",
+                "marketCap",
+                "volume",
+                "exchange",
+                "type",
+                "sector",
+                "industry",
+                "website",
+            ]
+        ]
+
+        # Format columns
+        df.columns = [
+            "Symbol",
+            "Name",
+            "PercentDayChange",
+            "PriceChange",
+            "52WeekLow",
+            "ClosingPrice",
+            "52WeekHigh",
+            "MarketCap",
+            "Volume",
+            "Exchange",
+            "Type",
+            "Sector",
+            "Industry",
+            "Website",
+        ]
+
+        # Add progress column
+        # st.data_editor(
+        #     df,
+        #     column_config={
+        #         "ClosingPrice": st.column_config.ProgressColumn(
+        #             "ClosingPrice", min_value=1, max_value=100, format="$%.2f"
+        #         ),
+        #     },
+        # )
+
+        # Format style
+        df = (
+            df.style.format(
+                formatter={
+                    "PriceChange": "${:.2f}",
+                    "PercentDayChange": "{:.1f}%",
+                    "52WeekLow": "${:.2f}",
+                    "ClosingPrice": "${:.2f}",
+                    "52WeekHigh": "${:.2f}",
+                    "MarketCap": "${:,.2f}",
+                    "Volume": "{:,.0f}",
+                }
+            )
+            .background_gradient(subset=["PercentDayChange"], cmap="autumn")
+            .background_gradient(subset=["MarketCap"], cmap="Greens")
+            .highlight_null(color="gray")
+        )
+
+        return df
 
     def _create_drop_dataframe(self) -> pd.DataFrame:
         """Join drops DataFrame with company data."""
@@ -86,21 +153,3 @@ class TopDrops:
         )
 
         return top_losses_df
-
-    def _format_drop_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Add styling to DataFrame."""
-        return (
-            df.style.format(
-                formatter={
-                    "PercentDayChange": "{:.1f}%",
-                    "52WeekLow": "${:.2f}",
-                    "ClosingPrice": "${:.2f}",
-                    "52WeekHigh": "${:.2f}",
-                    "MarketCap": "${:,.2f}",
-                    "Volume": "{:,.0f}",
-                }
-            )
-            .background_gradient(subset=["PercentDayChange"], cmap="autumn")
-            .background_gradient(subset=["MarketCap"], cmap="Greens")
-            .highlight_null(color="gray")
-        )
