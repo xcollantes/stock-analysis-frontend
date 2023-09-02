@@ -11,9 +11,9 @@ import yfinance as yf
 from deps.utils import dict_check
 
 
-@st.cache_data(show_spinner="DEPRECATED ...")
+@st.cache_data(show_spinner="Query company metrics ...")
 def get_yahoo_metrics(symbol: str) -> tuple[str, str, str, str]:
-    """DEPRECATED. Get metrics for a company by calling API.
+    """Get specific metrics for a company by calling API.
 
     These metrics change over time as opposed to the static company data.
     """
