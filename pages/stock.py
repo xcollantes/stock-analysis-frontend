@@ -25,6 +25,7 @@ def main() -> None:
         selection_days: str = st.selectbox(
             "Days ago price history",
             ("5 days", "30 days", "60 days", "90 days", "6 months", "1 year"),
+            index=5,  # Default selection on render
         )
 
         submit = st.form_submit_button(label="Go")
