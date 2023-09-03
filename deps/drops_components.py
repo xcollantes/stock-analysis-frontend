@@ -32,8 +32,8 @@ class TopDrops:
         self.sector = sector
         self.industry = industry
 
-    def get_drop_dataframe(self) -> pd.DataFrame:
-        """Return largest drops of the day in DataFrame stylized."""
+    def get_drop_dataframe_formatted(self) -> pd.DataFrame:
+        """Return largest drops of the day in DataFrame."""
         df: pd.DataFrame = self._create_drop_dataframe()
 
         df = df[
@@ -47,7 +47,6 @@ class TopDrops:
                 "52WeekHigh",
                 "marketCap",
                 "volume",
-                "exchange",
                 "type",
                 "sector",
                 "industry",
@@ -66,25 +65,22 @@ class TopDrops:
             "52WeekHigh",
             "MarketCap",
             "Volume",
-            "Exchange",
             "Type",
             "Sector",
             "Industry",
             "Website",
         ]
 
-        # Add progress column
-        # st.data_editor(
-        #     df,
-        #     column_config={
-        #         "ClosingPrice": st.column_config.ProgressColumn(
-        #             "ClosingPrice", min_value=1, max_value=100, format="$%.2f"
-        #         ),
-        #     },
-        # )
+        return df
 
-        # Format style
-        df = (
+    def get_drop_table(self, color: str) -> None:
+        """Apply styles to DataFrame.
+
+        Args:
+            color: HTML color name.
+        """
+        df: pd.DataFrame = self.get_drop_dataframe_formatted()
+        df_styler = (
             df.style.format(
                 formatter={
                     "PriceChange": "${:.2f}",
@@ -94,14 +90,26 @@ class TopDrops:
                     "52WeekHigh": "${:.2f}",
                     "MarketCap": "${:,.2f}",
                     "Volume": "{:,.0f}",
-                }
+                },
+                hyperlinks="html",
             )
+            .set_properties(subset=["ClosingPrice"], **{"text-align": "right"})
             .background_gradient(subset=["PercentDayChange"], cmap="autumn")
             .background_gradient(subset=["MarketCap"], cmap="Greens")
             .highlight_null(color="gray")
         )
 
-        return df
+        # https://stackoverflow.com/q/77030320/8278075
+        for rowIdx, (low, high) in enumerate(zip(df["52WeekLow"], df["52WeekHigh"])):
+            df_styler = df_styler.bar(
+                subset=pd.IndexSlice[rowIdx, "ClosingPrice"],
+                color=color,
+                vmin=low,
+                vmax=high,
+            )
+
+        # Pandas Styler object is HTML and CSS
+        st.markdown(df_styler.to_html(escape=False), unsafe_allow_html=True)
 
     def _create_drop_dataframe(self) -> pd.DataFrame:
         """Join drops DataFrame with company data."""

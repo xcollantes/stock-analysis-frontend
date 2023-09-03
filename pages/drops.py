@@ -1,8 +1,10 @@
 """Find top drops."""
 
 import logging
+from deps.charts import days_ago_input, show_historical_chart
 
 from deps.drops_components import TopDrops
+from pages.stock import symbol_has_error
 import streamlit as st
 
 from deps.page_config import PageConfig
@@ -21,11 +23,21 @@ def main() -> None:
     )
 
     drops = TopDrops(0.10)
-    st.dataframe(drops.get_drop_dataframe())
+    drops.get_drop_table(color="purple")
 
-    # selection = False
-    # if selection:
-    #     show_historical_chart("GOOG", 10)
+    with st.form(key="stock_drop_form"):
+        symbol_value = st.text_input(
+            label="Stock symbol",
+            max_chars=10,
+        ).strip()
+        error_message: str = symbol_has_error(symbol_value)
+
+        submit = st.form_submit_button(label="Go")
+        if submit:
+            if error_message:
+                st.error(error_message)
+            else:
+                show_historical_chart(symbol_value, days_ago_input("6 months"))
 
 
 if __name__ == "__main__":

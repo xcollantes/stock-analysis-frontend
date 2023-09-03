@@ -4,7 +4,7 @@ import os
 import logging
 import re
 import streamlit as st
-from deps.charts import show_historical_chart
+from deps.charts import days_ago_input, show_historical_chart
 from deps.page_config import PageConfig
 from passphrase.utils import is_auth
 
@@ -27,21 +27,14 @@ def main() -> None:
             ("5 days", "30 days", "60 days", "90 days", "6 months", "1 year"),
         )
 
-        days: int = 5
-        selection = selection_days.split(" ")
-        if selection[1].startswith("day"):
-            days = int(selection[0])
-        if selection[1].startswith("month"):
-            days = int(selection[0]) * 30
-        if selection[1].startswith("year"):
-            days = int(selection[0]) * 365
-
         submit = st.form_submit_button(label="Go")
         if submit:
             if error_message:
                 st.error(error_message)
             else:
-                show_historical_chart(symbol_value.upper(), days)
+                show_historical_chart(
+                    symbol_value.upper(), days_ago_input(selection_days)
+                )
 
 
 def symbol_has_error(symbol_query: str) -> str:

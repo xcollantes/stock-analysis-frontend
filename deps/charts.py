@@ -13,6 +13,28 @@ from deps.yahoo import (
 )
 
 
+def days_ago_input(days_ago_text: str) -> int:
+    """Clean and convert human readable days ago into int.
+
+    Args:
+        days_ago_text: Human text such as '5 days', '1 month', '1 year'. Can
+        also use single letter such as '1 d', '5 m', '12 y'. There must be a
+        single space between the quantity and the time amount.
+
+    Returns:
+        Integer of days.
+    """
+    days: int = 0
+    selection = days_ago_text.split(" ")
+    if selection[1].startswith("d"):
+        days = int(selection[0])
+    if selection[1].startswith("m"):
+        days = int(selection[0]) * 30
+    if selection[1].startswith("y"):
+        days = int(selection[0]) * 365
+    return days
+
+
 def show_historical_chart(symbol: str, days_ago: int) -> None:
     """Render company historical price charts with earnings results."""
 
