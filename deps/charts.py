@@ -1,11 +1,18 @@
 """Charts."""
 
 
+import logging
 import altair as alt
 import pandas as pd
+from deps.finnhub import get_company_competitors
+from deps.fmp import get_company_metrics_fmp
 import streamlit as st
 
-from deps.chart_components import earnings_beat_chart, stock_chart_trad_mult
+from deps.chart_components import (
+    competitor_ratio_charts,
+    earnings_beat_chart,
+    stock_chart_trad_mult,
+)
 from deps.yahoo import (
     get_company_yahoo,
     get_earnings_surprises_yahoo,
@@ -37,7 +44,6 @@ def days_ago_input(days_ago_text: str) -> int:
 
 def show_historical_chart(symbol: str, days_ago: int) -> None:
     """Render company historical price charts with earnings results."""
-
     info_df = get_company_yahoo(symbol)
     historic_prices_df: pd.DataFrame = get_historic_prices(symbol, days_ago)
 
@@ -47,8 +53,6 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
     earnings_beat_df: pd.DataFrame = get_earnings_surprises_yahoo(
         symbol, days_ago=days_ago, show_next=(True if days_ago >= 60 else False)
     )  # Get last x quarters
-
-    # competitor_list: pd.Series = get_competitors(symbol)
 
     # competitors_ratio_df: pd.DataFrame = handle_filter_metrics(info_df)
     # for competitor_symbol in competitor_list:
@@ -79,9 +83,59 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
 """
     )
 
+    st.write(f"### Earnings and closing prices ({symbol})")
+
     st.write(
         alt.layer(
             stock_chart_trad_mult(historic_prices_df),
             earnings_beat_chart(earnings_beat_df, symbol),
         ).resolve_scale(y="independent")
     )
+
+
+def show_financial_metrics_competitors_chart(symbol: str) -> None:
+    """Render graphs of company against competitors.
+
+    Args:
+        symbol: Company stock symbol.
+    """
+    st.write("### Competitor benchmarks")
+
+    comp_series: pd.Series = get_company_competitors(symbol)
+    combined_df: pd.DataFrame = pd.DataFrame()
+    for comp_symbol in comp_series:
+        comp_df: pd.DataFrame = get_company_yahoo(comp_symbol)
+        # comp_df = get_company_metrics_fmp(comp_symbol)  # Alternate
+        # st.write(comp_df)
+        try:
+            combined_df = pd.concat(
+                [
+                    combined_df,
+                    comp_df[
+                        [
+                            "symbol",
+                            "trailingPE",
+                            "priceToSalesTrailing12Months",
+                            "profitMargins",
+                            "debtToEquity",
+                            "totalRevenue",
+                            "totalCashPerShare",
+                            "operatingCashflow",
+                            "totalCash",
+                            "sharesShort",
+                            "recommendationKey",
+                        ]
+                    ],
+                ],
+                axis=0,
+                ignore_index=True,
+            )
+        except KeyError:
+            logging.warn("Could not get metrics for %s", comp_symbol)
+
+    # Transform chart
+    transformed_combined_df = pd.melt(
+        combined_df, id_vars=["symbol"], var_name="metric"
+    )
+
+    st.write(competitor_ratio_charts(transformed_combined_df))

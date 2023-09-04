@@ -106,12 +106,6 @@ def competitor_ratio_charts(ratio_df: pd.DataFrame) -> alt.Chart:
     if ratio_df.shape[0] < 1:
         return alt.Chart()
 
-    # Transform chart
-    ratio_df: pd.DataFrame = pd.melt(ratio_df, id_vars=["symbol"], var_name="metric")
-
-    # Filter ratio metrics
-    # ratio_df: pd.DataFrame = ratio_df[ratio_df.isin()]
-
     chart = (
         alt.Chart(ratio_df)
         .mark_point(size=200, strokeWidth=6)
@@ -157,7 +151,7 @@ def earnings_beat_chart(earnings_df: pd.DataFrame, symbol_name: str = ""):
             tooltip=tooltip,
         )
         .transform_filter(date_filter)
-        .properties(title=f"Earnings beat quarterly {symbol_name}", width=WIDTH)
+        .properties(width=WIDTH)
     )
 
     actual_chart = (
