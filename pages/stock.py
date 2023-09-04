@@ -9,6 +9,11 @@ from deps.charts import (
     show_financial_metrics_competitors_chart,
     show_historical_chart,
 )
+from deps.charts import (
+    days_ago_input,
+    show_financial_metrics_competitors_chart,
+    show_historical_chart,
+)
 from deps.page_config import PageConfig
 from passphrase.utils import is_auth
 

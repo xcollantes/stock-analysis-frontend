@@ -5,6 +5,7 @@ import logging
 import altair as alt
 import pandas as pd
 from deps.finnhub import get_company_competitors
+from deps.fmp import get_company_metrics_fmp
 import streamlit as st
 
 from deps.chart_components import (
@@ -70,6 +71,8 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
 {a_row.get('website', '')}
 """
     )
+
+    st.write(f"### Earnings and closing prices ({symbol})")
 
     st.write(
         alt.layer(
