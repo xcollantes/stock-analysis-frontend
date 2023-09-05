@@ -5,7 +5,6 @@ import logging
 import altair as alt
 import pandas as pd
 from deps.finnhub import get_company_competitors
-from deps.fmp import get_company_metrics_fmp
 import streamlit as st
 
 from deps.chart_components import (
@@ -71,8 +70,6 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
 {a_row.get('website', '')}
 """
     )
-
-    st.write(f"### Earnings and closing prices ({symbol})")
 
     st.write(
         alt.layer(
@@ -166,12 +163,27 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                 axis=0,
                 ignore_index=True,
             )
-        except KeyError as ke:
-            logging.warn("Could not get metrics for %s: %s", comp_symbol, ke)
+        except KeyError as ke as ke:
+            logging.warn("Could not get metrics for %s: %s: %s", comp_symbol, ke, ke)
 
     # Transform chart
     transformed_combined_df = pd.melt(
-        combined_df, id_vars=["symbol", "shortName"], var_name="metric"
+        combined_df, id_vars=["symbol", "shortName", "shortName"], var_name="metric"
+    )
+    st.write(
+        show_combined_df.style.format(
+            formatter={
+                "trailingPE": "{:,.2f}",
+                "totalCash": "${:,.0f}",
+                "previousClose": "${:,.2f}",
+                "dividendYield": "${:,.2f}",
+                "marketCap": "${:,.0f}",
+                "sharesOutstanding": "{:,.0f}",
+                "fullTimeEmployees": "{:,.0f}",
+                "fiftyTwoWeekLow": "${:,.2f}",
+                "fiftyTwoWeekHigh": "${:,.2f}",
+            }
+        )
     )
     st.write(
         show_combined_df.style.format(
@@ -189,4 +201,4 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
         )
     )
 
-    st.write(competitor_ratio_charts(transformed_combined_df, symbol))
+    st.write(competitor_ratio_charts(transformed_combined_df, symbol, symbol))
