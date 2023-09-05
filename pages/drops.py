@@ -1,7 +1,11 @@
 """Find top drops."""
 
 import logging
-from deps.charts import days_ago_input, show_historical_chart
+from deps.charts import (
+    days_ago_input,
+    show_financial_metrics_competitors_chart,
+    show_historical_chart,
+)
 
 from deps.drops_components import TopDrops
 from pages.stock import symbol_has_error
@@ -37,7 +41,10 @@ def main() -> None:
             if error_message:
                 st.error(error_message)
             else:
+                st.write(f"### Earnings and closing prices ({symbol_value})")
                 show_historical_chart(symbol_value, days_ago_input("6 months"))
+                st.write("### Competitor benchmarks")
+                show_financial_metrics_competitors_chart(symbol_value)
 
 
 if __name__ == "__main__":

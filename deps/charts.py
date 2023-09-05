@@ -5,7 +5,6 @@ import logging
 import altair as alt
 import pandas as pd
 from deps.finnhub import get_company_competitors
-from deps.fmp import get_company_metrics_fmp
 import streamlit as st
 
 from deps.chart_components import (
@@ -54,17 +53,6 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
         symbol, days_ago=days_ago, show_next=(True if days_ago >= 60 else False)
     )  # Get last x quarters
 
-    # competitors_ratio_df: pd.DataFrame = handle_filter_metrics(info_df)
-    # for competitor_symbol in competitor_list:
-    #     ratio_df: pd.DataFrame = get_company_yahoo(competitor_symbol)
-    #     ratio_df = handle_filter_metrics(ratio_df)
-
-    #     competitors_ratio_df = pd.concat(
-    #         [competitors_ratio_df, ratio_df],
-    #         axis=0,
-    #         ignore_index=True,
-    #     )
-
     a_row = info_df.loc[0]
     st.header(f"{a_row.get('longName', '')} ({symbol})")
     st.write(
@@ -83,8 +71,6 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
 """
     )
 
-    st.write(f"### Earnings and closing prices ({symbol})")
-
     st.write(
         alt.layer(
             stock_chart_trad_mult(historic_prices_df),
@@ -99,14 +85,49 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
     Args:
         symbol: Company stock symbol.
     """
-    st.write("### Competitor benchmarks")
-
     comp_series: pd.Series = get_company_competitors(symbol)
+
+    show_combined_df: pd.DataFrame = pd.DataFrame()
     combined_df: pd.DataFrame = pd.DataFrame()
     for comp_symbol in comp_series:
         comp_df: pd.DataFrame = get_company_yahoo(comp_symbol)
         # comp_df = get_company_metrics_fmp(comp_symbol)  # Alternate
-        # st.write(comp_df)
+
+        # Fields change according to the data source
+        try:
+            show_combined_df = pd.concat(
+                [
+                    show_combined_df,
+                    comp_df[
+                        [
+                            "symbol",
+                            "shortName",
+                            "trailingPE",
+                            "recommendationKey",
+                            "industry",
+                            "sector",
+                            "longBusinessSummary",
+                            "fullTimeEmployees",
+                            "totalCash",
+                            "fiftyTwoWeekLow",
+                            "previousClose",
+                            "fiftyTwoWeekHigh",
+                            "dividendYield",
+                            "marketCap",
+                        ]
+                    ],
+                ],
+                axis=0,
+                ignore_index=True,
+            )
+        except KeyError as ke:
+            logging.warn("Could not find field for %s: %s", comp_symbol, ke)
+
+        # Fields change according to the data source
+        #
+        # NOTE: Yahoo Finance API may use a different symbol such as input
+        # 'GOOG' (Class C share with no voting rights) will output 'GOOGL'
+        # (Class A share with voting rights).
         try:
             combined_df = pd.concat(
                 [
@@ -114,6 +135,7 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                     comp_df[
                         [
                             "symbol",
+                            "shortName",
                             "trailingPE",
                             "priceToSalesTrailing12Months",
                             "profitMargins",
@@ -123,19 +145,34 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                             "operatingCashflow",
                             "totalCash",
                             "sharesShort",
-                            "recommendationKey",
+                            "sharesOutstanding",
                         ]
                     ],
                 ],
                 axis=0,
                 ignore_index=True,
             )
-        except KeyError:
-            logging.warn("Could not get metrics for %s", comp_symbol)
+        except KeyError as ke:
+            logging.warn("Could not get metrics for %s: %s", comp_symbol, ke)
 
     # Transform chart
     transformed_combined_df = pd.melt(
-        combined_df, id_vars=["symbol"], var_name="metric"
+        combined_df, id_vars=["symbol", "shortName"], var_name="metric"
+    )
+    st.write(
+        show_combined_df.style.format(
+            formatter={
+                "trailingPE": "{:,.2f}",
+                "totalCash": "${:,.0f}",
+                "previousClose": "${:,.2f}",
+                "dividendYield": "${:,.2f}",
+                "marketCap": "${:,.0f}",
+                "sharesOutstanding": "{:,.0f}",
+                "fullTimeEmployees": "{:,.0f}",
+                "fiftyTwoWeekLow": "${:,.2f}",
+                "fiftyTwoWeekHigh": "${:,.2f}",
+            }
+        )
     )
 
-    st.write(competitor_ratio_charts(transformed_combined_df))
+    st.write(competitor_ratio_charts(transformed_combined_df, symbol))

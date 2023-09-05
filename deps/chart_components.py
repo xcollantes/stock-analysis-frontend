@@ -3,7 +3,6 @@
 
 import altair as alt
 import pandas as pd
-import streamlit as st
 
 WIDTH = 2100
 
@@ -79,44 +78,58 @@ def stock_chart_trad_mult(symbol_data: pd.DataFrame, title: str = "") -> alt.Cha
         .add_selection(selection)
     )
 
-    # gradient_styling = alt.Chart(symbol_data).mark_area(
-    #     line={"color": "darkgreen"},
-    #     color=alt.Gradient(
-    #         gradient="linear",
-    #         stops=[
-    #             alt.GradientStop(color="white", offset=0),
-    #             alt.GradientStop(color="darkgreen", offset=1),
-    #         ],
-    #     ),
-    #     x=x_axis,
-    #     y=y_axis,
-    # )
-
     return alt.layer(change_chart, horizontal_marker)
 
 
-def competitor_ratio_charts(ratio_df: pd.DataFrame) -> alt.Chart:
+def competitor_ratio_charts(ratio_df: pd.DataFrame, base_symbol: str) -> alt.Chart:
     """Return Altair chart comparing financial ratios.
 
-    Required columns:
-        symbol - Company symbol
-        value - Metric value
-        metric - Accounting measurement name (FreeFlowCash, P/E, GrossProfits, etc.)
+    Args:
+        ratio_df: DataFrame with symbols of competitors including the original
+            stock symbol to compare against.
+            Required columns:
+                symbol - Company symbol
+                value - Metric value
+                metric - Accounting measurement name (FreeFlowCash, P/E,
+                GrossProfits, etc.)
+        base_symbol: Baseline stock symbol to compare against.
+
+    Returns:
+        Altair graph layered on mark charts for each competitor including the
+        base symbol.
     """
     if ratio_df.shape[0] < 1:
         return alt.Chart()
 
+    marker_shape: list[str] = []
+    for distinct_symbol in ratio_df["symbol"].drop_duplicates().sort_values():
+        if distinct_symbol == base_symbol:
+            marker_shape.append(
+                "M0,.5L.6,.8L.5,.1L1,-.3L.3,-.4L0,-1L-.3,-.4L-1,-.3L-.5,.1L-.6,.8L0,.5Z"
+            )  # Star SVG path
+        else:
+            marker_shape.append("circle")
+
     chart = (
         alt.Chart(ratio_df)
-        .mark_point(size=200, strokeWidth=6)
+        .mark_point(
+            size=50,
+            strokeWidth=6,
+        )
         .encode(
             row=alt.Row("metric:N", header=alt.Header(labelAngle=0, labelFontSize=12)),
-            x=alt.X("value:Q", axis=None),
-            y=alt.Y("symbol:N", axis=None),
-            tooltip=alt.Tooltip(["symbol:N", "metric:N", "value:Q"]),
-            color=alt.Color("symbol:N"),
+            x=alt.X("value:Q"),
+            y=alt.Y("symbol:N"),
+            tooltip=alt.Tooltip(["shortName:N", "metric:N", "value:Q"]),
+            shape=alt.Shape(
+                "symbol:N", scale=alt.Scale(range=marker_shape), legend=None
+            ),
+            color=alt.Color(
+                "shortName:N",
+                legend=alt.Legend(orient="top"),
+            ),
         )
-    )
+    ).resolve_scale(x="independent")
 
     return chart
 

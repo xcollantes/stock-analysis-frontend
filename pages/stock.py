@@ -37,8 +37,13 @@ def main() -> None:
             if error_message:
                 st.error(error_message)
             else:
+                st.write(f"### Earnings and closing prices ({symbol_value})")
                 show_historical_chart(
                     symbol_value.upper(), days_ago_input(selection_days)
+                )
+                st.write("### Competitor benchmarks")
+                st.write(
+                    "If a company fundamentals outperform competitors, this would be a signal of an opportunity."
                 )
                 show_financial_metrics_competitors_chart(symbol_value)
 
