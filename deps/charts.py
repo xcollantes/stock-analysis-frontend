@@ -85,3 +85,113 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
             earnings_beat_chart(earnings_beat_df, symbol),
         ).resolve_scale(y="independent")
     )
+
+
+def show_financial_metrics_competitors_chart(symbol: str) -> None:
+    """Render graphs of company against competitors.
+
+    Args:
+        symbol: Company stock symbol.
+    """
+    comp_series: pd.Series = get_company_competitors(symbol)
+
+    show_combined_df: pd.DataFrame = pd.DataFrame()
+    desired_columns_show_combined = [
+        "symbol",
+        "shortName",
+        "trailingPE",
+        "recommendationKey",
+        "industry",
+        "sector",
+        "longBusinessSummary",
+        "fullTimeEmployees",
+        "totalCash",
+        "fiftyTwoWeekLow",
+        "previousClose",
+        "fiftyTwoWeekHigh",
+        "dividendYield",
+        "marketCap",
+    ]
+
+    combined_df: pd.DataFrame = pd.DataFrame()
+    desired_columns_combined = [
+        "symbol",
+        "shortName",
+        "trailingPE",
+        "priceToSalesTrailing12Months",
+        "profitMargins",
+        "debtToEquity",
+        "totalRevenue",
+        "totalCashPerShare",
+        "operatingCashflow",
+        "totalCash",
+        "sharesShort",
+        "sharesOutstanding",
+    ]
+
+    for comp_symbol in comp_series:
+        comp_df: pd.DataFrame = get_company_yahoo(comp_symbol)
+        # comp_df = get_company_metrics_fmp(comp_symbol)  # Alternate
+
+        # Fields change according to the data source
+        try:
+            show_combined_df = pd.concat(
+                [
+                    show_combined_df,
+                    comp_df.loc[
+                        :,
+                        comp_df.columns.isin(desired_columns_show_combined),
+                    ],
+                ],
+                axis=0,
+                ignore_index=True,
+            )
+        except KeyError as ke:
+            logging.warn("Could not find field for %s: %s", comp_symbol, ke)
+
+        # Reorder since `concat` may not have preserved column order.
+        show_combined_df = show_combined_df.reindex(
+            columns=desired_columns_show_combined
+        )
+
+        # Fields change according to the data source
+        #
+        # NOTE: Yahoo Finance API may use a different symbol such as input
+        # 'GOOG' (Class C share with no voting rights) will output 'GOOGL'
+        # (Class A share with voting rights).
+        try:
+            combined_df = pd.concat(
+                [
+                    combined_df,
+                    comp_df.loc[
+                        :,
+                        comp_df.columns.isin(desired_columns_combined),
+                    ],
+                ],
+                axis=0,
+                ignore_index=True,
+            )
+        except KeyError as ke:
+            logging.warn("Could not get metrics for %s: %s", comp_symbol, ke)
+
+    # Transform chart
+    transformed_combined_df = pd.melt(
+        combined_df, id_vars=["symbol", "shortName"], var_name="metric"
+    )
+    st.write(
+        show_combined_df.style.format(
+            formatter={
+                "trailingPE": "{:,.2f}",
+                "totalCash": "${:,.0f}",
+                "previousClose": "${:,.2f}",
+                "dividendYield": "${:,.2f}",
+                "marketCap": "${:,.0f}",
+                "sharesOutstanding": "{:,.0f}",
+                "fullTimeEmployees": "{:,.0f}",
+                "fiftyTwoWeekLow": "${:,.2f}",
+                "fiftyTwoWeekHigh": "${:,.2f}",
+            }
+        )
+    )
+
+    st.write(competitor_ratio_charts(transformed_combined_df, symbol))

@@ -41,13 +41,13 @@ class PageConfig:
                 self.initial_sidebar_state,
                 menu_items=menu_items_section,
             ),
-            st.markdown(
-                """<style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        </style>""",
-                unsafe_allow_html=True,
-            ),
+            #     st.markdown(
+            #         """<style>
+            # #MainMenu {visibility: hidden;}
+            # footer {visibility: hidden;}
+            # </style>""",
+            #         unsafe_allow_html=True,
+            #     ),
         )
 
 
