@@ -163,7 +163,7 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                 axis=0,
                 ignore_index=True,
             )
-        except KeyError as ke as ke:
+        except KeyError as ke:
             logging.warn("Could not get metrics for %s: %s: %s", comp_symbol, ke, ke)
 
     st.write(
