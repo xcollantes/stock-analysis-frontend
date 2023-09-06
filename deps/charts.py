@@ -166,10 +166,6 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
         except KeyError as ke as ke:
             logging.warn("Could not get metrics for %s: %s: %s", comp_symbol, ke, ke)
 
-    # Transform chart
-    transformed_combined_df = pd.melt(
-        combined_df, id_vars=["symbol", "shortName", "shortName"], var_name="metric"
-    )
     st.write(
         show_combined_df.style.format(
             formatter={
@@ -184,6 +180,10 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                 "fiftyTwoWeekHigh": "${:,.2f}",
             }
         )
+
+    # Transform chart
+    transformed_combined_df = pd.melt(
+        combined_df, id_vars=["symbol", "shortName"], var_name="metric"
     )
     st.write(
         show_combined_df.style.format(
@@ -201,4 +201,4 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
         )
     )
 
-    st.write(competitor_ratio_charts(transformed_combined_df, symbol, symbol))
+    st.write(competitor_ratio_charts(transformed_combined_df, symbol))
