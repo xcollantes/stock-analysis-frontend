@@ -180,6 +180,7 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                 "fiftyTwoWeekHigh": "${:,.2f}",
             }
         )
+    )
 
     # Transform chart
     transformed_combined_df = pd.melt(
