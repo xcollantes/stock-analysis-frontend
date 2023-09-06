@@ -88,7 +88,39 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
     comp_series: pd.Series = get_company_competitors(symbol)
 
     show_combined_df: pd.DataFrame = pd.DataFrame()
+    desired_columns_show_combined = [
+        "symbol",
+        "shortName",
+        "trailingPE",
+        "recommendationKey",
+        "industry",
+        "sector",
+        "longBusinessSummary",
+        "fullTimeEmployees",
+        "totalCash",
+        "fiftyTwoWeekLow",
+        "previousClose",
+        "fiftyTwoWeekHigh",
+        "dividendYield",
+        "marketCap",
+    ]
+
     combined_df: pd.DataFrame = pd.DataFrame()
+    desired_columns_combined = [
+        "symbol",
+        "shortName",
+        "trailingPE",
+        "priceToSalesTrailing12Months",
+        "profitMargins",
+        "debtToEquity",
+        "totalRevenue",
+        "totalCashPerShare",
+        "operatingCashflow",
+        "totalCash",
+        "sharesShort",
+        "sharesOutstanding",
+    ]
+
     for comp_symbol in comp_series:
         comp_df: pd.DataFrame = get_company_yahoo(comp_symbol)
         # comp_df = get_company_metrics_fmp(comp_symbol)  # Alternate
@@ -98,23 +130,9 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
             show_combined_df = pd.concat(
                 [
                     show_combined_df,
-                    comp_df[
-                        [
-                            "symbol",
-                            "shortName",
-                            "trailingPE",
-                            "recommendationKey",
-                            "industry",
-                            "sector",
-                            "longBusinessSummary",
-                            "fullTimeEmployees",
-                            "totalCash",
-                            "fiftyTwoWeekLow",
-                            "previousClose",
-                            "fiftyTwoWeekHigh",
-                            "dividendYield",
-                            "marketCap",
-                        ]
+                    comp_df.loc[
+                        :,
+                        comp_df.columns.isin(desired_columns_show_combined),
                     ],
                 ],
                 axis=0,
@@ -122,6 +140,11 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
             )
         except KeyError as ke:
             logging.warn("Could not find field for %s: %s", comp_symbol, ke)
+
+        # Reorder since `concat` may not have preserved column order.
+        show_combined_df = show_combined_df.reindex(
+            columns=desired_columns_show_combined
+        )
 
         # Fields change according to the data source
         #
@@ -132,21 +155,9 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
             combined_df = pd.concat(
                 [
                     combined_df,
-                    comp_df[
-                        [
-                            "symbol",
-                            "shortName",
-                            "trailingPE",
-                            "priceToSalesTrailing12Months",
-                            "profitMargins",
-                            "debtToEquity",
-                            "totalRevenue",
-                            "totalCashPerShare",
-                            "operatingCashflow",
-                            "totalCash",
-                            "sharesShort",
-                            "sharesOutstanding",
-                        ]
+                    comp_df.loc[
+                        :,
+                        comp_df.columns.isin(desired_columns_combined),
                     ],
                 ],
                 axis=0,
