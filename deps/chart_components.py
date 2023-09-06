@@ -101,6 +101,7 @@ def competitor_ratio_charts(ratio_df: pd.DataFrame, base_symbol: str) -> alt.Cha
     if ratio_df.shape[0] < 1:
         return alt.Chart()
 
+    base_symbol = base_symbol.upper()
     marker_shape: list[str] = []
     for distinct_symbol in ratio_df["symbol"].drop_duplicates().sort_values():
         if distinct_symbol == base_symbol:
@@ -181,8 +182,13 @@ def earnings_beat_chart(earnings_df: pd.DataFrame, symbol_name: str = ""):
     return expected_chart + actual_chart
 
 
-def format_company_description(company_info_df: pd.DataFrame) -> dict[str, str]:
-    """Handle errors if field does not exist for company info."""
+def _DEPRECATED_format_company_description(
+    company_info_df: pd.DataFrame,
+) -> dict[str, str]:
+    """Handle errors if field does not exist for company info.
+
+    DEPRECATED: Remove if after 01 Oct 2023.
+    """
     return {
         "longName": company_info_df["longName"].values[0],
         "longBusinessSummary": company_info_df["longBusinessSummary"].values[0],

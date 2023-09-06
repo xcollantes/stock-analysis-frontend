@@ -1,6 +1,7 @@
 """Find top drops."""
 
 import logging
+from deps.calendar import add_to_google_calendar
 from deps.charts import (
     days_ago_input,
     show_financial_metrics_competitors_chart,
