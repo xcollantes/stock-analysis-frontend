@@ -186,20 +186,5 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
     transformed_combined_df = pd.melt(
         combined_df, id_vars=["symbol", "shortName"], var_name="metric"
     )
-    st.write(
-        show_combined_df.style.format(
-            formatter={
-                "trailingPE": "{:,.2f}",
-                "totalCash": "${:,.0f}",
-                "previousClose": "${:,.2f}",
-                "dividendYield": "${:,.2f}",
-                "marketCap": "${:,.0f}",
-                "sharesOutstanding": "{:,.0f}",
-                "fullTimeEmployees": "{:,.0f}",
-                "fiftyTwoWeekLow": "${:,.2f}",
-                "fiftyTwoWeekHigh": "${:,.2f}",
-            }
-        )
-    )
 
     st.write(competitor_ratio_charts(transformed_combined_df, symbol))
