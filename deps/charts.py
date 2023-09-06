@@ -1,9 +1,11 @@
 """Charts."""
 
 
+from datetime import datetime, timedelta
 import logging
 import altair as alt
 import pandas as pd
+from deps.calendar import add_to_google_calendar
 from deps.finnhub import get_company_competitors
 import streamlit as st
 
@@ -76,6 +78,14 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
             stock_chart_trad_mult(historic_prices_df),
             earnings_beat_chart(earnings_beat_df, symbol),
         ).resolve_scale(y="independent")
+    )
+
+    # Assuming Yahoo Finance returns next earnings as first row
+    next_earnings_call_date: datetime = earnings_beat_df.loc[0, "Date"]
+    st.write(
+        f"Next earnings call estimated date: **{next_earnings_call_date.strftime('%a, %d %b %Y')}** "
+        + f"in {(datetime.today().date() - datetime.date(next_earnings_call_date)).days * -1} days "
+        + f"[[Add to Google Calendar]({add_to_google_calendar(symbol, next_earnings_call_date)})]"
     )
 
 
