@@ -23,16 +23,16 @@ show_pages(
 
 
 def main() -> None:
+    st.title("Stock analysis tools")
+    st.subheader("Created by Xavier Collantes (xaviercollantes.dev)")
     with open("assets/calc-icon.svg", "r") as svg_file:
-        st.title("Stock analysis tools")
-        st.subheader("Created by Xavier Collantes (xaviercollantes.dev)")
         st.write(svg_file.read(), unsafe_allow_html=True)
-        st.write("## Drops")
-        st.write(
-            "Find today's biggest market shock drops and evaluate if an opportunity exists."
-        )
-        st.write("## Stocks")
-        st.write("Find information on a specific stock by symbol.")
+    st.write("## Drops")
+    st.write(
+        "Find today's biggest market shock drops and evaluate if an opportunity exists."
+    )
+    st.write("## Stocks")
+    st.write("Find information on a specific stock by symbol.")
 
 
 if __name__ == "__main__":
