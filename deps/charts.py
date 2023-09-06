@@ -1,11 +1,17 @@
 """Charts."""
 
 
+import logging
 import altair as alt
 import pandas as pd
+from deps.finnhub import get_company_competitors
 import streamlit as st
 
-from deps.chart_components import earnings_beat_chart, stock_chart_trad_mult
+from deps.chart_components import (
+    competitor_ratio_charts,
+    earnings_beat_chart,
+    stock_chart_trad_mult,
+)
 from deps.yahoo import (
     get_company_yahoo,
     get_earnings_surprises_yahoo,
@@ -37,7 +43,6 @@ def days_ago_input(days_ago_text: str) -> int:
 
 def show_historical_chart(symbol: str, days_ago: int) -> None:
     """Render company historical price charts with earnings results."""
-
     info_df = get_company_yahoo(symbol)
     historic_prices_df: pd.DataFrame = get_historic_prices(symbol, days_ago)
 
@@ -47,19 +52,6 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
     earnings_beat_df: pd.DataFrame = get_earnings_surprises_yahoo(
         symbol, days_ago=days_ago, show_next=(True if days_ago >= 60 else False)
     )  # Get last x quarters
-
-    # competitor_list: pd.Series = get_competitors(symbol)
-
-    # competitors_ratio_df: pd.DataFrame = handle_filter_metrics(info_df)
-    # for competitor_symbol in competitor_list:
-    #     ratio_df: pd.DataFrame = get_company_yahoo(competitor_symbol)
-    #     ratio_df = handle_filter_metrics(ratio_df)
-
-    #     competitors_ratio_df = pd.concat(
-    #         [competitors_ratio_df, ratio_df],
-    #         axis=0,
-    #         ignore_index=True,
-    #     )
 
     a_row = info_df.loc[0]
     st.header(f"{a_row.get('longName', '')} ({symbol})")
@@ -172,12 +164,8 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                 ignore_index=True,
             )
         except KeyError as ke:
-            logging.warn("Could not get metrics for %s: %s", comp_symbol, ke)
+            logging.warn("Could not get metrics for %s: %s: %s", comp_symbol, ke, ke)
 
-    # Transform chart
-    transformed_combined_df = pd.melt(
-        combined_df, id_vars=["symbol", "shortName"], var_name="metric"
-    )
     st.write(
         show_combined_df.style.format(
             formatter={
@@ -192,6 +180,11 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
                 "fiftyTwoWeekHigh": "${:,.2f}",
             }
         )
+    )
+
+    # Transform chart
+    transformed_combined_df = pd.melt(
+        combined_df, id_vars=["symbol", "shortName"], var_name="metric"
     )
 
     st.write(competitor_ratio_charts(transformed_combined_df, symbol))

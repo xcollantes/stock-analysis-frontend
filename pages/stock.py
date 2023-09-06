@@ -4,7 +4,16 @@ import os
 import logging
 import re
 import streamlit as st
-from deps.charts import days_ago_input, show_historical_chart
+from deps.charts import (
+    days_ago_input,
+    show_financial_metrics_competitors_chart,
+    show_historical_chart,
+)
+from deps.charts import (
+    days_ago_input,
+    show_financial_metrics_competitors_chart,
+    show_historical_chart,
+)
 from deps.page_config import PageConfig
 from passphrase.utils import is_auth
 
@@ -25,6 +34,7 @@ def main() -> None:
         selection_days: str = st.selectbox(
             "Days ago price history",
             ("5 days", "30 days", "60 days", "90 days", "6 months", "1 year"),
+            index=5,  # Default selection on render
         )
 
         submit = st.form_submit_button(label="Go")
@@ -32,9 +42,15 @@ def main() -> None:
             if error_message:
                 st.error(error_message)
             else:
+                st.write(f"### Earnings and closing prices ({symbol_value})")
                 show_historical_chart(
                     symbol_value.upper(), days_ago_input(selection_days)
                 )
+                st.write("### Competitor benchmarks")
+                st.write(
+                    "If a company fundamentals outperform competitors, this would be a signal of an opportunity."
+                )
+                show_financial_metrics_competitors_chart(symbol_value)
 
 
 def symbol_has_error(symbol_query: str) -> str:

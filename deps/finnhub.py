@@ -12,12 +12,13 @@ FINNHUB_KEY: str = st.secrets.finnhub.apikey
 
 
 @st.cache_data(show_spinner="Querying competitor data ...")
-def get_competitors(symbol: str) -> pd.Series:
+def get_company_competitors(symbol: str) -> pd.Series:
     """Get list of peers of a given company.
+
+    List of competitor symbols include the input company.
 
     Args:
       symbol: One stock symbol for a company.
-
 
     Returns:
       List of competitor company stock symbols in a Series.
