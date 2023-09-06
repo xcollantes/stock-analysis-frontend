@@ -63,7 +63,7 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
 
 {a_row.get('longBusinessSummary', '')}
 
-**Employees:** {a_row.get('fullTimeEmployees', '')}
+**Employees:** {a_row.get('fullTimeEmployees', ''):,d}
 
 {a_row.get('address1', '')} {a_row.get('city', '')}, {a_row.get('state', '')}, {a_row.get('country', '')}
 
