@@ -14,6 +14,7 @@ from deps.charts import (
     show_financial_metrics_competitors_chart,
     show_historical_chart,
 )
+from deps.insider_watch import show_congress_dataframe
 from deps.page_config import PageConfig
 from passphrase.utils import is_auth
 
@@ -42,7 +43,6 @@ def main() -> None:
             if error_message:
                 st.error(error_message)
             else:
-                st.write(f"### Earnings and closing prices ({symbol_value})")
                 show_historical_chart(
                     symbol_value.upper(), days_ago_input(selection_days)
                 )
@@ -51,6 +51,7 @@ def main() -> None:
                     "If a company fundamentals outperform competitors, this would be a signal of an opportunity."
                 )
                 show_financial_metrics_competitors_chart(symbol_value)
+                show_congress_dataframe(symbol_value)
 
 
 def symbol_has_error(symbol_query: str) -> str:
