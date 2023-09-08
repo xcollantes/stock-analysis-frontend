@@ -57,17 +57,27 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
 
     a_row = info_df.loc[0]
     st.header(f"{a_row.get('longName', '')} ({symbol})")
+    emp_count: int = a_row.get("fullTimeEmployees", 0)
+    industry: str = a_row.get("industry", "")
+    sector: str = a_row.get("sector", "")
+    summary: str = a_row.get("longBusinessSummary", "")
+    address: str = a_row.get("address1", "")
+    city: str = a_row.get("city", "")
+    state: str = a_row.get("state", "")
+    country: str = a_row.get("country", "")
+
     st.write(
         f"""
-**Industry:** {a_row.get('industry', '')}
 
-**Sector:** {a_row.get('sector', '')}
+{f'**Industry:** {industry}' if industry else ''}
 
-{a_row.get('longBusinessSummary', '')}
+{f'**Sector:** {sector}' if sector else ''}
 
-**Employees:** {a_row.get('fullTimeEmployees', ''):,d}
+{f'{summary}' if summary else ''}
 
-{a_row.get('address1', '')} {a_row.get('city', '')}, {a_row.get('state', '')}, {a_row.get('country', '')}
+{f'**Employees:** {emp_count:,d}' if emp_count > 0 else ''}
+
+{f'{address}' if address else ''} {f'{city},' if city else ''} {f'{state},' if state else ''} {f'{country}' if country else ''}
 
 {a_row.get('website', '')}
 """
