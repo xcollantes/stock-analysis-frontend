@@ -210,4 +210,4 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
         combined_df, id_vars=["symbol", "shortName"], var_name="metric"
     )
 
-    st.write(competitor_ratio_charts(transformed_combined_df, symbol))
+    st.altair_chart(competitor_ratio_charts(transformed_combined_df, symbol))
