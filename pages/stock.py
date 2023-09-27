@@ -38,11 +38,11 @@ def main() -> None:
         )
 
         submit = st.form_submit_button(label="Go")
+
     if submit:
         if error_message:
             st.error(error_message)
         else:
-            st.write(f"### Earnings and closing prices ({symbol_value})")
             show_historical_chart(symbol_value.upper(), days_ago_input(selection_days))
             st.write("### Competitor benchmarks")
             st.write(

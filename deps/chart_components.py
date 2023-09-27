@@ -4,6 +4,8 @@
 import altair as alt
 import pandas as pd
 
+import streamlit as st
+
 WIDTH = 2100
 
 
@@ -64,7 +66,9 @@ def stock_chart_trad_mult(symbol_data: pd.DataFrame, title: str = "") -> alt.Cha
             color=color,
             tooltip=tooltip,
         )
-        .properties(title={"text": title, "subtitle": f"{title}"}, width=WIDTH)
+        .properties(
+            title={"text": title, "subtitle": f"{title}"},
+        )
     )
 
     horizontal_marker = (
@@ -165,7 +169,6 @@ def earnings_beat_chart(earnings_df: pd.DataFrame, symbol_name: str = ""):
             tooltip=tooltip,
         )
         .transform_filter(date_filter)
-        .properties(width=WIDTH)
     )
 
     actual_chart = (
