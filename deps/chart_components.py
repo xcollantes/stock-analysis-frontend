@@ -1,6 +1,7 @@
 """Chart visualizations."""
 
 
+from cProfile import label
 import altair as alt
 import pandas as pd
 
@@ -122,16 +123,23 @@ def competitor_ratio_charts(ratio_df: pd.DataFrame, base_symbol: str) -> alt.Cha
             strokeWidth=6,
         )
         .encode(
-            row=alt.Row("metric:N", header=alt.Header(labelAngle=0, labelFontSize=12)),
+            row=alt.Row(
+                "metric:N",
+                title=None,
+                header=alt.Header(labelAngle=0, labelAlign="left", labelFontSize=20),
+            ),
             x=alt.X("value:Q"),
-            y=alt.Y("symbol:N"),
+            y=alt.Y("symbol:N", title=None),
             tooltip=alt.Tooltip(["shortName:N", "metric:N", "value:Q"]),
             shape=alt.Shape(
-                "symbol:N", scale=alt.Scale(range=marker_shape), legend=None
+                "symbol:N",
+                scale=alt.Scale(range=marker_shape),
+                title=None,
+                legend=None,
             ),
             color=alt.Color(
                 "shortName:N",
-                legend=alt.Legend(orient="top"),
+                legend=alt.Legend(orient="top", title=None),
             ),
         )
     ).resolve_scale(x="independent")
