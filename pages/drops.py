@@ -38,14 +38,14 @@ def main() -> None:
         error_message: str = symbol_has_error(symbol_value)
 
         submit = st.form_submit_button(label="Go")
-        if submit:
-            if error_message:
-                st.error(error_message)
-            else:
-                st.write(f"### Earnings and closing prices ({symbol_value})")
-                show_historical_chart(symbol_value, days_ago_input("6 months"))
-                st.write("### Competitor benchmarks")
-                show_financial_metrics_competitors_chart(symbol_value)
+
+    if submit:
+        if error_message:
+            st.error(error_message)
+        else:
+            show_historical_chart(symbol_value, days_ago_input("6 months"))
+            st.write("### Competitor benchmarks")
+            show_financial_metrics_competitors_chart(symbol_value)
 
 
 if __name__ == "__main__":
