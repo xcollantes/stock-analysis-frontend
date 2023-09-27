@@ -85,11 +85,12 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
     """
         )
 
-    st.write(
+    st.altair_chart(
         alt.layer(
             stock_chart_trad_mult(historic_prices_df),
             earnings_beat_chart(earnings_beat_df, symbol),
-        ).resolve_scale(y="independent")
+        ).resolve_scale(y="independent"),
+        use_container_width=True,
     )
 
     # Assuming Yahoo Finance returns next earnings as first row
