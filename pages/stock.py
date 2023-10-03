@@ -50,6 +50,7 @@ def main() -> None:
                 "If a company fundamentals outperform competitors, this would be a signal of an opportunity."
             )
             show_financial_metrics_competitors_chart(symbol_value)
+            show_congress_dataframe(symbol_value)
 
 
 def symbol_has_error(symbol_query: str) -> str:
