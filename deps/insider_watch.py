@@ -65,6 +65,10 @@ def show_house_trades_dataframe(symbol: str) -> None:
         if stock_df.empty:
             _show_no_trades()
         else:
+            stock_df["disclosure_date"] = pd.to_datetime(
+                stock_df["disclosure_date"], errors="coerce"
+            )
+
             st.dataframe(
                 stock_df.sort_values(by="transaction_date", ascending=False)[
                     [
