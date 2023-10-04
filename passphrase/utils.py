@@ -25,7 +25,9 @@ def show_login() -> None:
     """Render password box."""
     st.header("Enter passphrase")
     with st.form(key="passphrase_form"):
-        phrase_attempt: str = st.text_input(label="").strip()
+        phrase_attempt: str = st.text_input(
+            label="Enter passphrase", label_visibility="collapsed"
+        ).strip()
         submit = st.form_submit_button(label="Enter")
 
     if submit:
