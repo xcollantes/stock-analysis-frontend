@@ -37,10 +37,7 @@ def show_house_trades_dataframe(symbol: str) -> None:
 
     Use https://housestockwatcher.com for House of Representatives who
     trade a symbol.
-    """
-    if not symbol:
-        st.write()
-
+    """git push -u origin 7-insider-trading-watch-congress
     st.write("### US House of Representatives trades")
 
     symbol: str = symbol.upper()
@@ -126,9 +123,6 @@ def show_senate_trades_dataframe(symbol: str) -> None:
     Use https://senatestockwatcher.com for Senators who
     trade a symbol.
     """
-    if not symbol:
-        st.write()
-
     st.write("### US Senate trades")
 
     symbol: str = symbol.upper()
