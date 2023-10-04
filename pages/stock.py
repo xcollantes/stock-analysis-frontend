@@ -14,6 +14,8 @@ from deps.charts import (
     show_financial_metrics_competitors_chart,
     show_historical_chart,
 )
+from deps.insider_watch import show_house_trades_dataframe, show_senate_trades_dataframe
+
 from deps.page_config import PageConfig
 from passphrase.utils import is_auth
 
@@ -49,6 +51,8 @@ def main() -> None:
                 "If a company fundamentals outperform competitors, this would be a signal of an opportunity."
             )
             show_financial_metrics_competitors_chart(symbol_value)
+            show_house_trades_dataframe(symbol_value)
+            show_senate_trades_dataframe(symbol_value)
 
 
 def symbol_has_error(symbol_query: str) -> str:
