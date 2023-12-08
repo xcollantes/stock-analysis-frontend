@@ -1,25 +1,23 @@
-"""Home page."""
+"""Home page.
+
+`Home.py` must be in the root directory of the application.
+"""
+
+from deps.page_config import PageConfig
+
+# Must be at top of page: https://github.com/xcollantes/stock-analysis-frontend/issues/29
+PageConfig(layout="centered").get_config()
 
 import logging
 import os
-from st_pages import Page, show_pages
 
 import streamlit as st
 
-from deps.page_config import PageConfig
+
 from passphrase.utils import is_auth
 
 
-PageConfig(layout="centered").get_config()
 url_args = st.experimental_get_query_params()
-
-show_pages(
-    [
-        Page("Home.py", "Getting started", ":house:"),
-        Page("pages/stock.py", "Search symbol", ":mag:"),
-        Page("pages/drops.py", "Top drops", ":chart_with_downwards_trend:"),
-    ]
-)
 
 
 def main() -> None:
