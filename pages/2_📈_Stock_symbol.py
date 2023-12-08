@@ -1,5 +1,6 @@
 """Individual stock dashboard."""
 
+
 from deps.page_config import PageConfig
 
 # Must be at top of page: https://github.com/xcollantes/stock-analysis-frontend/issues/29
@@ -8,6 +9,7 @@ PageConfig().get_config()
 import os
 import logging
 import streamlit as st
+from deps.errors import symbol_has_error
 from deps.charts import (
     days_ago_input,
     show_financial_metrics_competitors_chart,
@@ -19,8 +21,6 @@ from deps.charts import (
     show_historical_chart,
 )
 from deps.insider_watch import show_house_trades_dataframe, show_senate_trades_dataframe
-
-
 from passphrase.utils import is_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
