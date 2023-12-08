@@ -1,8 +1,12 @@
 """Individual stock dashboard."""
 
+from deps.page_config import PageConfig
+
+# Must be at top of page: https://github.com/xcollantes/stock-analysis-frontend/issues/29
+PageConfig().get_config()
+
 import os
 import logging
-import re
 import streamlit as st
 from deps.charts import (
     days_ago_input,
@@ -16,14 +20,13 @@ from deps.charts import (
 )
 from deps.insider_watch import show_house_trades_dataframe, show_senate_trades_dataframe
 
-from deps.page_config import PageConfig
+
 from passphrase.utils import is_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
-url_args = st.experimental_get_query_params()
 
-PageConfig().get_config()
+url_args = st.experimental_get_query_params()
 
 
 def main() -> None:
@@ -53,18 +56,6 @@ def main() -> None:
             show_financial_metrics_competitors_chart(symbol_value)
             show_house_trades_dataframe(symbol_value)
             show_senate_trades_dataframe(symbol_value)
-
-
-def symbol_has_error(symbol_query: str) -> str:
-    """Check stock query is valid, if not returns error message."""
-    if symbol_query == "":
-        return "Enter stock symbol"
-    if not bool(re.match("^[a-zA-Z]+$", symbol_query)):
-        return "Letters only"
-    if not len(symbol_query) <= 5:
-        return "More than 4 characters"
-
-    return ""
 
 
 if __name__ == "__main__":
