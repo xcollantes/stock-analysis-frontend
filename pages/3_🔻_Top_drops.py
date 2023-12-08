@@ -24,7 +24,7 @@ url_args = st.experimental_get_query_params()
 
 
 def main() -> None:
-    st.title("Top drops")
+    st.title("Today's top drops")
     st.write(
         "Find the largest shocks of the day in a market may lead to finding an undervalued stock."
     )
