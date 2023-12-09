@@ -1,6 +1,5 @@
 """Charts."""
 
-
 from datetime import datetime, timedelta
 import logging
 import altair as alt

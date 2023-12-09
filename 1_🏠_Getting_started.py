@@ -10,9 +10,7 @@ PageConfig(layout="centered").get_config()
 
 import logging
 import os
-
 import streamlit as st
-
 
 from passphrase.utils import is_auth
 
