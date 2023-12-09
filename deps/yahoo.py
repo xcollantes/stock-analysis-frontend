@@ -1,6 +1,5 @@
 """Functions for calling Yahoo Finance."""
 
-
 from datetime import datetime, timedelta
 import logging
 

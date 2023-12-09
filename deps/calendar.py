@@ -1,6 +1,5 @@
 """Adding events to user calendar."""
 
-
 from datetime import datetime
 import urllib.parse
 

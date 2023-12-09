@@ -1,6 +1,5 @@
 """API calls to Finnhub.io API."""
 
-
 import json
 import logging
 import pandas as pd
