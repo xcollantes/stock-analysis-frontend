@@ -8,13 +8,8 @@ PageConfig().get_config()
 import os
 import logging
 import streamlit as st
-from deps.errors import symbol_has_error
-from deps.charts import (
-    days_ago_input,
-    show_financial_metrics_competitors_chart,
-    show_historical_chart,
-)
-from deps.charts import (
+from deps.common.errors import symbol_has_error
+from deps.charts.charts import (
     days_ago_input,
     show_financial_metrics_competitors_chart,
     show_historical_chart,

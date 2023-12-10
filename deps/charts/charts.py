@@ -8,7 +8,7 @@ from deps.calendar import add_to_google_calendar
 from deps.finnhub import get_company_competitors
 import streamlit as st
 
-from deps.chart_components import (
+from deps.charts.chart_components import (
     competitor_ratio_charts,
     earnings_beat_chart,
     stock_chart_trad_mult,
