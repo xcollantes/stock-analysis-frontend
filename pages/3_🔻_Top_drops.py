@@ -18,7 +18,6 @@ from passphrase.utils import is_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
-
 url_args = st.experimental_get_query_params()
 
 
