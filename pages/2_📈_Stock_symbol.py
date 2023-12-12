@@ -48,7 +48,7 @@ def main() -> None:
             st.write(
                 "If a company fundamentals outperform competitors, this would be a signal of an opportunity."
             )
-            show_news(symbol_value, 12)
+            show_news(symbol_value, 1000)
             show_financial_metrics_competitors_chart(symbol_value)
             show_house_trades_dataframe(symbol_value)
             show_senate_trades_dataframe(symbol_value)
