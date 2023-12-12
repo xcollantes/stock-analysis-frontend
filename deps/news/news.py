@@ -44,6 +44,16 @@ def show_news(symbol: str, count: 50 | 1000, height: None | int = None) -> None:
             + "Sentiment scores are weighted with article relevance."
         )
         st.write(
+            """
+            **Sentiment score:** 
+            - `x <= -0.35`: Bearish
+            - `-0.35 < x <= -0.15`: Somewhat-Bearish
+            - `-0.15 < x < 0.15`: Neutral
+            - `0.15 <= x < 0.35`: Somewhat_Bullish
+            - `x >= 0.35`: Bullish
+            """
+        )
+        st.write(
             "Data source, https://www.alphavantage.co, computes the relevance and sentiment for each article."
         )
         st.write(
