@@ -1,6 +1,5 @@
 """Functions for calling Yahoo Finance."""
 
-
 from datetime import datetime, timedelta
 import logging
 
@@ -8,7 +7,7 @@ import streamlit as st
 import pandas as pd
 import yfinance as yf
 
-from deps.utils import dict_check
+from deps.common.utils import dict_check
 
 
 @st.cache_data(show_spinner="Query company metrics ...")

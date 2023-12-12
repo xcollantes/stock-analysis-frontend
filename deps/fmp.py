@@ -1,6 +1,5 @@
 """API calls to FinancialModelPrep.com API."""
 
-
 import logging
 import pandas as pd
 import streamlit as st

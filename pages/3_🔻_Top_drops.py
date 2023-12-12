@@ -1,6 +1,5 @@
 """Find top drops."""
 
-
 from deps.page_config import PageConfig
 
 # Must be at top of page: https://github.com/xcollantes/stock-analysis-frontend/issues/29
@@ -8,8 +7,8 @@ PageConfig().get_config()
 
 import logging
 import streamlit as st
-from deps.errors import symbol_has_error
-from deps.charts import (
+from deps.common.errors import symbol_has_error
+from deps.charts.charts import (
     days_ago_input,
     show_financial_metrics_competitors_chart,
     show_historical_chart,
@@ -18,7 +17,6 @@ from deps.drops_components import TopDrops
 from passphrase.utils import is_auth
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
-
 
 url_args = st.experimental_get_query_params()
 

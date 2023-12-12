@@ -1,6 +1,5 @@
 """Component DataFrames of largest drops."""
 
-
 import pandas as pd
 import streamlit as st
 from deps.yahoo import get_yahoo_overview_company_metrics

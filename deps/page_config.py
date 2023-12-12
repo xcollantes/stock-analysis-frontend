@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 class PageConfig:
     """Overridable Streamlit page config."""
 
