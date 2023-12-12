@@ -78,9 +78,8 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
                 "source",
                 "summary",
                 "ticker_sentiment.relevance_score",
-                "overall_sentiment_label",
+                "ticker_sentiment.ticker_sentiment_score",
                 "url",
-                "overall_sentiment_score",
             ]
         ]
         .sort_values("ticker_sentiment.relevance_score", ascending=False)
