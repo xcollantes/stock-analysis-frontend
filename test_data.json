@@ -1,0 +1,1958 @@
+{
+  "items": "50",
+  "sentiment_score_definition": "x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish",
+  "relevance_score_definition": "0 < x <= 1, with a higher score indicating higher relevance.",
+  "feed": [
+    {
+      "title": "Pro-Bitcoin President Javier Milei Assumes Office In Argentina Amid Severe Economic Crisis: 'Our Country Demands Action'",
+      "url": "https://www.benzinga.com/markets/cryptocurrency/23/12/36171179/pro-bitcoin-president-javier-milei-assumes-office-in-argentina-amid-severe-economic-crisis",
+      "time_published": "20231211T070651",
+      "authors": ["Benzinga Neuro"],
+      "summary": "In a bid to steer the nation out of its economic crisis, pro-Bitcoin BTC/USD leader Javier Milei took the helm as Argentina's president on Sunday. What Happened: Associated Press reports indicate that Milei's inaugural address in Buenos Aires was a frank delineation of Argentina's economic peril, ...",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2023/Javier-Milei-shutter_2.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "General",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.890401"
+        },
+        {
+          "topic": "Economy - Fiscal",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.684621"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.158519"
+        }
+      ],
+      "overall_sentiment_score": -0.075879,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:UYU",
+          "relevance_score": "0.104228",
+          "ticker_sentiment_score": "-0.087045",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.206685",
+          "ticker_sentiment_score": "-0.172696",
+          "ticker_sentiment_label": "Somewhat-Bearish"
+        },
+        {
+          "ticker": "CRYPTO:BTC",
+          "relevance_score": "0.487546",
+          "ticker_sentiment_score": "0.048371",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Sodexo and Harris Interactive reveal the results of the first international sustainable food barometer",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793557/0/en/Sodexo-and-Harris-Interactive-reveal-the-results-of-the-first-international-sustainable-food-barometer.html",
+      "time_published": "20231211T070300",
+      "authors": ["Sodexo SA"],
+      "summary": "Issy-les-Moulineaux, France - December ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/41035b08-904d-4df8-8380-c60cba9de662",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [],
+      "overall_sentiment_score": 0.40806,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "SDXOF",
+          "relevance_score": "0.38716",
+          "ticker_sentiment_score": "0.472382",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Sodexo and Harris Interactive reveal the results of the first international sustainable food barometer",
+      "url": "https://www.benzinga.com/pressreleases/23/12/g36171174/sodexo-and-harris-interactive-reveal-the-results-of-the-first-international-sustainable-food-barom",
+      "time_published": "20231211T070300",
+      "authors": ["Globe Newswire"],
+      "summary": "Issy-les-Moulineaux, France - December 11th, 2023 Sodexo reveals the results of the first international sustainable food barometer carried out in partnership with the research and opinion polls institute Harris Interactive.",
+      "banner_image": "https://www.benzinga.com/next-assets/images/schema-image-default.png",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [],
+      "overall_sentiment_score": 0.37532,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "SDXOF",
+          "relevance_score": "0.373378",
+          "ticker_sentiment_score": "0.489007",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.064623",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Shell Plc Third Quarter 2023 Euro and Gbp Equivalent Dividend Payments",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793549/0/en/Shell-Plc-Third-Quarter-2023-Euro-and-Gbp-Equivalent-Dividend-Payments.html",
+      "time_published": "20231211T070000",
+      "authors": ["Shell plc"],
+      "summary": "The Board of Shell plc today announced the pounds sterling and euro equivalent dividend payments in respect of the third quarter 2023 interim dividend, which was announced on November 2, 2023 at US$0.331 per ordinary share.",
+      "banner_image": "",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.413559"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.650727"
+        }
+      ],
+      "overall_sentiment_score": 0.06651,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "RYDAF",
+          "relevance_score": "0.209819",
+          "ticker_sentiment_score": "0.011724",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:GBP",
+          "relevance_score": "0.158173",
+          "ticker_sentiment_score": "0.131122",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.026532",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "ATARI: HALF-YEAR 2023/2024 RESULTS",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793551/0/en/ATARI-HALF-YEAR-2023-2024-RESULTS.html",
+      "time_published": "20231211T070000",
+      "authors": ["ATARI"],
+      "summary": "HALF-YEAR 2023/2024 RESULTS ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/67e808ad-47a9-49ec-89c7-8917ccd376fa",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "IPO",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.995015"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.839681"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.108179"
+        },
+        {
+          "topic": "Economy - Macro",
+          "relevance_score": "0.310843"
+        }
+      ],
+      "overall_sentiment_score": 0.127911,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "COIN",
+          "relevance_score": "0.018743",
+          "ticker_sentiment_score": "0.040543",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Azentio Software wins double honours at IBSi Global FinTech Innovation Awards 2023",
+      "url": "https://www.newswire.ca/news-releases/azentio-software-wins-double-honours-at-ibsi-global-fintech-innovation-awards-2023-860090659.html",
+      "time_published": "20231211T070000",
+      "authors": ["Azentio Software Pvt Ltd"],
+      "summary": "SINGAPORE, Dec. 11, 2023 /CNW/ -- Azentio Software ( \"Azentio\" ) , a Singapore-headquartered technology firm owned by funds advised by , today announced that it won two awards at the 5th edition of the prestigious IBS Intelligence ( IBSi ) Global FinTech Innovation Awards 2023.",
+      "banner_image": "https://mma.prnewswire.com/media/1978771/Azentio_Logo.jpg?p=facebook",
+      "source": "Canada Newswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.newswire.ca",
+      "topics": [],
+      "overall_sentiment_score": 0.616685,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "SBKO",
+          "relevance_score": "0.235823",
+          "ticker_sentiment_score": "0.537697",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Caledonia Mining Corporation Plc: Notification of relevant change to significant shareholder",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793553/0/en/Caledonia-Mining-Corporation-Plc-Notification-of-relevant-change-to-significant-shareholder.html",
+      "time_published": "20231211T070000",
+      "authors": ["Caledonia Mining Corporation Plc"],
+      "summary": "ST HELIER, Jersey, Dec. 11, 2023 ( GLOBE NEWSWIRE ) -- Caledonia Mining Corporation Plc ( \"Caledonia\" or the \"Company\" ) ( NYSE AMERICAN: CMCL. AIM: CMCL. VFEX: CMCL ) announces that it received notification on December 8, 2023 from BlackRock, Inc. that on December 7, 2023 it had crossed a ...",
+      "banner_image": "https://ml.globenewswire.com/Resource/Download/0035576b-1c64-4826-8b0a-85178fe14519",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.0,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "BLK",
+          "relevance_score": "0.595343",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Shell Plc Third Quarter 2023 Euro and Gbp Equivalent Dividend Payments - Shell  ( NYSE:SHEL ) ",
+      "url": "https://www.benzinga.com/pressreleases/23/12/g36171151/shell-plc-third-quarter-2023-euro-and-gbp-equivalent-dividend-payments",
+      "time_published": "20231211T070000",
+      "authors": ["Globe Newswire"],
+      "summary": "The Board of Shell plc today announced the pounds sterling and euro equivalent dividend payments in respect of the third quarter 2023 interim dividend, which was announced on November 2, 2023 at US$0.331 per ordinary share.",
+      "banner_image": "https://www.benzinga.com/next-assets/images/schema-image-default.png",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.459462"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.538269"
+        }
+      ],
+      "overall_sentiment_score": 0.146843,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "RYDAF",
+          "relevance_score": "0.27454",
+          "ticker_sentiment_score": "0.162324",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "FOREX:GBP",
+          "relevance_score": "0.236588",
+          "ticker_sentiment_score": "0.172639",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.040011",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Cybertruck Vs. R1T: EPA Data Reveals How Tesla's EV Pickup Pales In Comparison To Rivian's Offering - Tesla  ( NASDAQ:TSLA ) , Rivian Automotive  ( NASDAQ:RIVN ) ",
+      "url": "https://www.benzinga.com/news/23/12/36171142/cybertruck-vs-r1t-epa-data-reveals-how-teslas-ev-pickup-pales-in-comparison-to-rivians-offering",
+      "time_published": "20231211T065839",
+      "authors": ["Shanthi Rexaline"],
+      "summary": "As the hype around Tesla, Inc.'s TSLA Cybertruck launch settles down, users have begun comparing the electric pickup truck from the company's stable with rival offerings.",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2023/Rivian-R1T-vs-Tesla-Cybertruck.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.147275,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "RIVN",
+          "relevance_score": "0.233556",
+          "ticker_sentiment_score": "0.244829",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "TSLA",
+          "relevance_score": "0.344074",
+          "ticker_sentiment_score": "0.010047",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Zelensky to visit White House; Trump refuses to testify in fraud trial",
+      "url": "https://www.economist.com/in-brief/2023/12/11/zelensky-to-visit-white-house-trump-refuses-to-testify-in-fraud-trial",
+      "time_published": "20231211T065624",
+      "authors": ["The Economist"],
+      "summary": "Zelensky to visit White House. Trump refuses to testify in fraud trial The Economist ...",
+      "banner_image": "https://www.economist.com/engassets/og-fallback-image.png",
+      "source": "The Economist",
+      "category_within_source": "BusinessGoogleRSS",
+      "source_domain": "www.economist.com",
+      "topics": [
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": -0.083439,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "HUM",
+          "relevance_score": "0.094762",
+          "ticker_sentiment_score": "-0.041459",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "TikTok restarts e-commerce in Indonesia with US$1.5 billion deal",
+      "url": "https://www.scmp.com/tech/big-tech/article/3244634/tiktok-restarts-e-commerce-indonesia-us15-billion-investment-goto-gojek-tokopedia-unit",
+      "time_published": "20231211T064901",
+      "authors": ["Reuters"],
+      "summary": "TikTok will buy 75 per cent of Indonesia's biggest e-commerce platform after a new rule in October effectively forced the social media giant to close its own online shopping service in the country.",
+      "banner_image": "https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2023/12/11/3708c60b-4e67-4152-9f6f-6d057ae99ac0_a4b67250.jpg",
+      "source": "South China Morning Post",
+      "category_within_source": "Companies",
+      "source_domain": "www.scmp.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.121689,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "BABA",
+          "relevance_score": "0.176502",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.088799",
+          "ticker_sentiment_score": "0.071235",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "PDD",
+          "relevance_score": "0.088799",
+          "ticker_sentiment_score": "0.291392",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Ryvu Therapeutics Presents Data on RVU120 at the 2023 American Society of Hematology  ( ASH )  Annual Meeting",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793547/0/en/Ryvu-Therapeutics-Presents-Data-on-RVU120-at-the-2023-American-Society-of-Hematology-ASH-Annual-Meeting.html",
+      "time_published": "20231211T064500",
+      "authors": ["Ryvu Therapeutics"],
+      "summary": "KRAKOW, Poland, Dec. 11, 2023 ( GLOBE NEWSWIRE ) -- Ryvu Therapeutics [WSE:RVU], a clinical-stage drug discovery and development company focusing on novel small molecule therapies that address emerging targets in oncology, presents clinical and preclinical data on RVU120, a selective CDK8/19 ...",
+      "banner_image": "https://ml.globenewswire.com/Resource/Download/f7eb2add-c6b2-4074-8a72-3440d46cbaea",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.360215"
+        }
+      ],
+      "overall_sentiment_score": 0.239342,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "EXEL",
+          "relevance_score": "0.030602",
+          "ticker_sentiment_score": "0.073789",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "BNTX",
+          "relevance_score": "0.030602",
+          "ticker_sentiment_score": "0.073789",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Ryvu Therapeutics Presents Data on RVU120 at the 2023 American Society of Hematology  ( ASH )  Annual Meeting",
+      "url": "https://www.benzinga.com/pressreleases/23/12/g36171115/ryvu-therapeutics-presents-data-on-rvu120-at-the-2023-american-society-of-hematology-ash-annual-me",
+      "time_published": "20231211T064500",
+      "authors": ["Globe Newswire"],
+      "summary": "Clinical activity observed in 50% of evaluable patients with relapsed/refractory acute myeloid leukemia ( r/r AML ) or high-risk myelodysplastic syndromes ( HR-MDS ) treated with RVU120 monotherapy, including a complete response.",
+      "banner_image": "https://www.benzinga.com/next-assets/images/schema-image-default.png",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.538269"
+        }
+      ],
+      "overall_sentiment_score": 0.243827,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "EXEL",
+          "relevance_score": "0.029802",
+          "ticker_sentiment_score": "0.070621",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "BNTX",
+          "relevance_score": "0.029802",
+          "ticker_sentiment_score": "0.070621",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Medtronic and Cosmo Pharmaceuticals forge ahead in AI-driven care",
+      "url": "https://investingnews.com/medtronic-and-cosmo-pharmaceuticals-forge-ahead-in-ai-driven-care/",
+      "time_published": "20231211T064309",
+      "authors": ["Investing News Network"],
+      "summary": "Agreement expands partnership between Medtronic and Cosmo Pharmaceuticals, set to transform endoscopy with cutting-edge AI technology",
+      "banner_image": "https://investingnews.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNTg1ODg1NS9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTcwODY4MTIxOX0.Phin9ClvosnPNpkGRdBWHz_VFepTco5fqEYZcXCsZIQ/image.png?width=210",
+      "source": "Investing News Network",
+      "category_within_source": "n/a",
+      "source_domain": "investingnews.com",
+      "topics": [
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.426835,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "MDT",
+          "relevance_score": "0.525607",
+          "ticker_sentiment_score": "0.574167",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "TikTok is investing $1.5 billion to get back into online shopping in Indonesia | Business",
+      "url": "https://www.cnn.com/2023/12/11/tech/indonesia-tiktok-goto-ecommerce-deal-intl-hnk/index.html",
+      "time_published": "20231211T063700",
+      "authors": [],
+      "summary": "TikTok is investing $1.5 billion to get back into online shopping in Indonesia ...",
+      "banner_image": "https://media.cnn.com/api/v1/images/stellar/prod/230928093437-zulkifli-hasan-conference-tiktok-ecommerce-ban.jpg?c=16x9&q=h_144,w_256,c_fill",
+      "source": "CNN",
+      "category_within_source": "Markets",
+      "source_domain": "www.cnn.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.108017,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "BABA",
+          "relevance_score": "0.181137",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "GOOG",
+          "relevance_score": "0.091162",
+          "ticker_sentiment_score": "0.067442",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "PDD",
+          "relevance_score": "0.181137",
+          "ticker_sentiment_score": "0.390041",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "AWON",
+          "relevance_score": "0.091162",
+          "ticker_sentiment_score": "0.116464",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "What Really Happened With Sam Altman Getting Fired As OpenAI CEO? New Details Emerge - Microsoft  ( NASDAQ:MSFT ) ",
+      "url": "https://www.benzinga.com/news/23/12/36171063/what-really-happened-with-sam-altman-getting-fired-as-openai-ceo-new-details-emerge",
+      "time_published": "20231211T063029",
+      "authors": ["Ananya Gairola"],
+      "summary": "New details have come to light about the short-lived expulsion of ChatGPT-parent, OpenAI's co-founder and CEO Sam Altman, from his leadership position at the company. What Happened: Altman's abrupt dismissal last month was not as simple as it seemed.",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2023/Open-AI-CEO-Sam-Altman.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": -0.017259,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "MSFT",
+          "relevance_score": "0.194242",
+          "ticker_sentiment_score": "0.304676",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Groupe Casino: Disposal of Casino stake in Éxito Group",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793545/0/en/Groupe-Casino-Disposal-of-Casino-stake-in-%C3%89xito-Group.html",
+      "time_published": "20231211T063000",
+      "authors": ["Groupe Casino"],
+      "summary": "Cession de la participation de Casino dans le groupe ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/19183fb0-0431-4d47-b45c-eb1ff217393f",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.036852,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "EXTO",
+          "relevance_score": "0.058615",
+          "ticker_sentiment_score": "0.05398",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Nyxoah Announces Real World Case Series Demonstrating Positive Results in Treating CCC Patients with Genio® - Nyxoah  ( NASDAQ:NYXH ) ",
+      "url": "https://www.benzinga.com/pressreleases/23/12/g36171062/nyxoah-announces-real-world-case-series-demonstrating-positive-results-in-treating-ccc-patients-wi",
+      "time_published": "20231211T063000",
+      "authors": ["Globe Newswire"],
+      "summary": "Data presented at the DGSM Conference in Berlin by Dr. Christian Plettenberg on December 8, 2023Results showed an average AHI decrease of 73%",
+      "banner_image": "https://www.benzinga.com/next-assets/images/schema-image-default.png",
+      "source": "Benzinga",
+      "category_within_source": "News",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.336384,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "NYXH",
+          "relevance_score": "0.433523",
+          "ticker_sentiment_score": "0.347814",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Outcome of Inbank Subordinated Bond Subscription",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793540/0/en/Outcome-of-Inbank-Subordinated-Bond-Subscription.html",
+      "time_published": "20231211T063000",
+      "authors": ["Inbank"],
+      "summary": "On Friday, 8 December 2023, the public offering of subordinated bonds of AS Inbank ( hereinafter Inbank ) ended. 2893 investors participated in the issue, subscribing to subordinated bonds for a total of 45.7 million euros. This means the initial issue volume was oversubscribed 7.6 times.",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/1c5d8893-460c-44e3-be59-da689a66ae75",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "IPO",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999894"
+        }
+      ],
+      "overall_sentiment_score": 0.280717,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.089462",
+          "ticker_sentiment_score": "0.094176",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Groupe Casino: Communication by the Casino group",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793543/0/en/Groupe-Casino-Communication-by-the-Casino-group.html",
+      "time_published": "20231211T063000",
+      "authors": ["Groupe Casino"],
+      "summary": "Communication by the Casino group ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/19183fb0-0431-4d47-b45c-eb1ff217393f",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.214378"
+        }
+      ],
+      "overall_sentiment_score": 0.150872,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "BGHL  ( EUR ) : NAV ( s ) ",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793542/0/en/BGHL-EUR-NAV-s.html",
+      "time_published": "20231211T063000",
+      "authors": ["BOUSSARD AND GAVAUDAN HOLDING LIMITED (EUR)"],
+      "summary": "BOUSSARD & GAVAUDAN HOLDING LIMITED ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/08549144-cb33-4d7e-8303-42a6fbde11ee",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "IPO",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999995"
+        }
+      ],
+      "overall_sentiment_score": 0.22929,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "LDNXF",
+          "relevance_score": "0.084423",
+          "ticker_sentiment_score": "0.141612",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.084423",
+          "ticker_sentiment_score": "0.066848",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Azerion simplifies loan structures between Azerion and Principion",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793541/0/en/Azerion-simplifies-loan-structures-between-Azerion-and-Principion.html",
+      "time_published": "20231211T063000",
+      "authors": ["Azerion Group NV"],
+      "summary": "Amsterdam, 11 December 2023 - Azerion Group N.V. ( \"Azerion\" ) announces that it has today entered into an agreement with Principion Holding B.V. ( \"Principion\" ) to simplify Azerion's loan structure by settling several loans outstanding between Azerion and Principion ( the \"Loan Settlement\" ) .",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/d0141ea1-1040-441d-bc5f-128b5fdfb4db",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.225592,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Nyxoah Announces Real World Case Series Demonstrating Positive Results in Treating CCC Patients with Genio®",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793544/0/en/Nyxoah-Announces-Real-World-Case-Series-Demonstrating-Positive-Results-in-Treating-CCC-Patients-with-Genio.html",
+      "time_published": "20231211T063000",
+      "authors": ["Nyxoah"],
+      "summary": "Nyxoah Announces Real World Case Series Demonstrating Positive Results in Treating CCC Patients with ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/e2fa6f25-aeb6-4638-a872-0484a355ccc2",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.355921,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "NYXH",
+          "relevance_score": "0.511734",
+          "ticker_sentiment_score": "0.44925",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "BGHL  ( GBP ) : NAV ( s ) ",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793539/0/en/BGHL-GBP-NAV-s.html",
+      "time_published": "20231211T063000",
+      "authors": ["BOUSSARD AND GAVAUDAN HOLDING LIMITED (GBP)"],
+      "summary": "BOUSSARD & GAVAUDAN HOLDING LIMITED ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/7ff2e5c8-e18b-440d-9baa-62983aef9475",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "IPO",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999995"
+        }
+      ],
+      "overall_sentiment_score": 0.22929,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "LDNXF",
+          "relevance_score": "0.084423",
+          "ticker_sentiment_score": "0.141612",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:EUR",
+          "relevance_score": "0.084423",
+          "ticker_sentiment_score": "0.066848",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Dogecoin Has Successfully Cleared All Major Resistance Levels,' Says Analyst, Poised To Reach $0.14 Levels If This Happens",
+      "url": "https://www.benzinga.com/markets/cryptocurrency/23/12/36171048/dogecoin-has-successfully-cleared-all-major-resistance-levels-says-analyst-poised-to-reach",
+      "time_published": "20231211T062605",
+      "authors": ["Mehab Qureshi"],
+      "summary": "Cryptocurrency analyst Ali Martinez on Saturday said that Dogecoin DOGE/USD has successfully cleared all major resistance levels, and he sees the meme cryptocurrency surging 40% in the last 24 hours. What Happened: Martinez has identified the price point of $0.095 as a pivotal support level for ...",
+      "banner_image": "https://cdn.benzinga.com/files/images/story/2023/Dogecoin--Photo-by-Vitalii-Stock-on-Shut_1.jpeg?width=1200&height=800&fit=crop",
+      "source": "Benzinga",
+      "category_within_source": "Markets",
+      "source_domain": "www.benzinga.com",
+      "topics": [
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.451494"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.108179"
+        }
+      ],
+      "overall_sentiment_score": 0.379586,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CRYPTO:SHIB",
+          "relevance_score": "0.268294",
+          "ticker_sentiment_score": "0.0",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "CRYPTO:DOGE",
+          "relevance_score": "0.974158",
+          "ticker_sentiment_score": "0.665408",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Bizarre pizza toppings horrify Italians",
+      "url": "https://theweek.com/digest/bizarre-pizza-toppings-horrify-italians",
+      "time_published": "20231211T062514",
+      "authors": ["Chas Newkey-Burden", "The Week UK"],
+      "summary": "The weirdest pizza toppings The Week ...",
+      "banner_image": "https://cdn.mos.cms.futurecdn.net/q6gNb9nHS2vgxu8QwEBijB-415-80.jpg",
+      "source": "The Week News",
+      "category_within_source": "n/a",
+      "source_domain": "theweek.com",
+      "topics": [
+        {
+          "topic": "Retail & Wholesale",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": -0.045451,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "DNUT",
+          "relevance_score": "0.076358",
+          "ticker_sentiment_score": "-0.120424",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FRNWF",
+          "relevance_score": "0.076358",
+          "ticker_sentiment_score": "0.059606",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "The livelihood impact of decentralised clean energy technologies in Indian agriculture and textiles",
+      "url": "https://www.financialexpress.com/business/sustainability-the-livelihood-impact-of-decentralised-clean-energy-technologies-in-indian-agriculture-and-textiles-3335078/",
+      "time_published": "20231211T062223",
+      "authors": ["Guest"],
+      "summary": "In a country like India, with a large geographical area where the agriculture and textile industries play an important role in the country's economy, a silent revolution is underway.",
+      "banner_image": "https://www.financialexpress.com/wp-content/uploads/2023/09/solar.jpg",
+      "source": "The Financial Express",
+      "category_within_source": "n/a",
+      "source_domain": "www.financialexpress.com",
+      "topics": [
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.402022,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CETY",
+          "relevance_score": "0.069094",
+          "ticker_sentiment_score": "0.181516",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "MEI Pharma  ( NASDAQ:MEIP )  Receives New Coverage from Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/mei-pharma-nasdaqmeip-receives-new-coverage-from-analysts-at-stocknews-com.html",
+      "time_published": "20231211T061644",
+      "authors": ["Defense World Staff"],
+      "summary": "Investment analysts at StockNews.com assumed coverage on shares of MEI Pharma ( NASDAQ:MEIP - Get Free Report ) in a report issued on Monday. The firm set a \"hold\" rating on the stock.",
+      "banner_image": "https://www.marketbeat.com/logos/mei-pharma-inc-logo.png?v=20230111061959",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999999"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.947132"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.214378"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.232929,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "MET",
+          "relevance_score": "0.130926",
+          "ticker_sentiment_score": "0.181959",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "MEIP",
+          "relevance_score": "0.838815",
+          "ticker_sentiment_score": "0.389164",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Qualtrics International  ( BATS:XM )  Now Covered by StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/qualtrics-international-batsxm-now-covered-by-stocknews-com.html",
+      "time_published": "20231211T061642",
+      "authors": ["Defense World Staff"],
+      "summary": "Equities research analysts at StockNews.com assumed coverage on shares of Qualtrics International ( BATS:XM - Get Free Report ) in a report issued on Monday. The firm set a \"sell\" rating on the stock. Shares of BATS:XM opened at $18.14 on Monday.",
+      "banner_image": "https://www.marketbeat.com/logos/qualtrics-international-inc-logo.jpg?v=20230612073251",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.858979"
+        }
+      ],
+      "overall_sentiment_score": 0.326552,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "XM",
+          "relevance_score": "0.872847",
+          "ticker_sentiment_score": "0.534225",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "StockNews.com Downgrades PayPal  ( NASDAQ:PYPL )  to Hold",
+      "url": "https://www.defenseworld.net/2023/12/11/stocknews-com-downgrades-paypal-nasdaqpypl-to-hold.html",
+      "time_published": "20231211T061642",
+      "authors": ["Defense World Staff"],
+      "summary": "PayPal ( NASDAQ:PYPL - Get Free Report ) was downgraded by equities research analysts at StockNews.com from a \"buy\" rating to a \"hold\" rating in a research note issued to investors on Monday. Several other research analysts have also recently commented on the stock.",
+      "banner_image": "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/paypal-holdings-inc-logo.png&w=240&h=240&zc=2",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.928769"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.31516,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "PYPL",
+          "relevance_score": "0.856646",
+          "ticker_sentiment_score": "0.514715",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "BAC",
+          "relevance_score": "0.044885",
+          "ticker_sentiment_score": "0.053059",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "IPXAF",
+          "relevance_score": "0.089629",
+          "ticker_sentiment_score": "0.286688",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "WFC",
+          "relevance_score": "0.044885",
+          "ticker_sentiment_score": "0.053059",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Origin Agritech  ( NASDAQ:SEED )  Research Coverage Started at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/origin-agritech-nasdaqseed-research-coverage-started-at-stocknews-com.html",
+      "time_published": "20231211T061642",
+      "authors": ["Defense World Staff"],
+      "summary": "Equities researchers at StockNews.com assumed coverage on shares of Origin Agritech ( NASDAQ:SEED - Get Free Report ) in a report released on Monday. The firm set a \"sell\" rating on the biotechnology company's stock. Origin Agritech stock opened at $1.90 on Monday.",
+      "banner_image": "https://www.marketbeat.com/logos/origin-agritech-limited-logo.jpg?v=20211203091850",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.977154"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.272731,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BAC",
+          "relevance_score": "0.201523",
+          "ticker_sentiment_score": "0.216122",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "VIRT",
+          "relevance_score": "0.101582",
+          "ticker_sentiment_score": "0.148425",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "SEED",
+          "relevance_score": "0.874457",
+          "ticker_sentiment_score": "0.455297",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "UBS",
+          "relevance_score": "0.201523",
+          "ticker_sentiment_score": "0.216122",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Xunlei  ( NASDAQ:XNET )  Now Covered by Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/xunlei-nasdaqxnet-now-covered-by-analysts-at-stocknews-com-3.html",
+      "time_published": "20231211T061642",
+      "authors": ["Defense World Staff"],
+      "summary": "Analysts at StockNews.com initiated coverage on shares of Xunlei ( NASDAQ:XNET - Get Free Report ) in a report issued on Monday. The firm set a \"buy\" rating on the software maker's stock. NASDAQ:XNET opened at $1.51 on Monday. The firm's 50-day moving average is $1.55 and its 200-day moving ...",
+      "banner_image": "https://www.marketbeat.com/logos/xunlei-limited-logo.jpg?v=20221221135255",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Blockchain",
+          "relevance_score": "0.310843"
+        },
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.989041"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.714479"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.108179"
+        }
+      ],
+      "overall_sentiment_score": 0.309126,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "STT",
+          "relevance_score": "0.15347",
+          "ticker_sentiment_score": "0.265392",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "ENV",
+          "relevance_score": "0.15347",
+          "ticker_sentiment_score": "0.265392",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "XNET",
+          "relevance_score": "0.824531",
+          "ticker_sentiment_score": "0.500216",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "VIRT",
+          "relevance_score": "0.077094",
+          "ticker_sentiment_score": "0.209196",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Orion Energy Systems  ( NASDAQ:OESX )  Now Covered by Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/orion-energy-systems-nasdaqoesx-now-covered-by-analysts-at-stocknews-com.html",
+      "time_published": "20231211T061642",
+      "authors": ["Defense World Staff"],
+      "summary": "Equities researchers at StockNews.com initiated coverage on shares of Orion Energy Systems ( NASDAQ:OESX - Get Free Report ) in a report issued on Monday. The brokerage set a \"hold\" rating on the electronics maker's stock. Orion Energy Systems stock opened at $0.88 on Monday.",
+      "banner_image": "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/orion-energy-systems-inc-logo.jpg?v=20230104123430&w=240&h=240&zc=2",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.980922"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.891286"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.220908,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "ENV",
+          "relevance_score": "0.077343",
+          "ticker_sentiment_score": "0.181188",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "OESX",
+          "relevance_score": "0.854693",
+          "ticker_sentiment_score": "0.371844",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "VCTR",
+          "relevance_score": "0.077343",
+          "ticker_sentiment_score": "0.181188",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Old Point Financial  ( NASDAQ:OPOF )  Now Covered by StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/old-point-financial-nasdaqopof-now-covered-by-stocknews-com.html",
+      "time_published": "20231211T061642",
+      "authors": ["Defense World Staff"],
+      "summary": "StockNews.com assumed coverage on shares of Old Point Financial ( NASDAQ:OPOF - Get Free Report ) in a research report issued to clients and investors on Monday. The firm set a \"hold\" rating on the bank's stock. OPOF opened at $17.55 on Monday.",
+      "banner_image": "https://www.marketbeat.com/logos/old-point-financial-co-logo.jpg?v=20221221113812",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999897"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.650727"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.274722,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BLK",
+          "relevance_score": "0.140485",
+          "ticker_sentiment_score": "0.204231",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "OPOF",
+          "relevance_score": "0.815635",
+          "ticker_sentiment_score": "0.448669",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "STT",
+          "relevance_score": "0.140485",
+          "ticker_sentiment_score": "0.204231",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Basilea announces that FDA approves expanded use of antifungal Cresemba®  ( isavuconazole )  in the United States in children with invasive aspergillosis and invasive mucormycosis",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793536/0/en/Basilea-announces-that-FDA-approves-expanded-use-of-antifungal-Cresemba-isavuconazole-in-the-United-States-in-children-with-invasive-aspergillosis-and-invasive-mucormycosis.html",
+      "time_published": "20231211T061500",
+      "authors": ["Basilea Pharmaceutica AG"],
+      "summary": "Allschwil, Switzerland, December ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/4403c5ae-6c9a-43d2-8c5f-deb2de747a47",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [],
+      "overall_sentiment_score": -0.06789,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "ALPMF",
+          "relevance_score": "0.023885",
+          "ticker_sentiment_score": "0.013186",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "FOREX:USD",
+          "relevance_score": "0.047749",
+          "ticker_sentiment_score": "0.004984",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "Novartis investigational iptacopan Phase III study demonstrates clinically meaningful and statistically significant proteinuria reduction in patients with C3 glomerulopathy  ( C3G ) ",
+      "url": "https://www.globenewswire.com/news-release/2023/12/11/2793535/0/en/Novartis-investigational-iptacopan-Phase-III-study-demonstrates-clinically-meaningful-and-statistically-significant-proteinuria-reduction-in-patients-with-C3-glomerulopathy-C3G.html",
+      "time_published": "20231211T061500",
+      "authors": ["Novartis Pharma AG"],
+      "summary": "Ad hoc announcement pursuant to Art. 53 LR ...",
+      "banner_image": "https://ml-eu.globenewswire.com/Resource/Download/5d242013-5d1f-440c-8ba6-3b5d3799b035",
+      "source": "GlobeNewswire",
+      "category_within_source": "n/a",
+      "source_domain": "www.globenewswire.com",
+      "topics": [
+        {
+          "topic": "Technology",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.310843"
+        }
+      ],
+      "overall_sentiment_score": 0.109098,
+      "overall_sentiment_label": "Neutral",
+      "ticker_sentiment": [
+        {
+          "ticker": "DSSMY",
+          "relevance_score": "0.055751",
+          "ticker_sentiment_score": "0.052",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "META",
+          "relevance_score": "0.018597",
+          "ticker_sentiment_score": "0.046046",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "BowFlex  ( NYSE:NLS )  Research Coverage Started at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/bowflex-nysenls-research-coverage-started-at-stocknews-com-2.html",
+      "time_published": "20231211T061444",
+      "authors": ["Defense World Staff"],
+      "summary": "Investment analysts at StockNews.com assumed coverage on shares of BowFlex ( NYSE:NLS - Get Free Report ) in a note issued to investors on Monday. The firm set a \"hold\" rating on the specialty retailer's stock. Shares of BowFlex stock opened at $0.82 on Monday.",
+      "banner_image": "https://www.marketbeat.com/logos/nautilus-logo.jpg",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.495866"
+        },
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.962106"
+        }
+      ],
+      "overall_sentiment_score": 0.277118,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "StockNews.com Begins Coverage on Ark Restaurants  ( NASDAQ:ARKR ) ",
+      "url": "https://www.defenseworld.net/2023/12/11/stocknews-com-begins-coverage-on-ark-restaurants-nasdaqarkr-3.html",
+      "time_published": "20231211T061444",
+      "authors": ["Defense World Staff"],
+      "summary": "StockNews.com initiated coverage on shares of Ark Restaurants ( NASDAQ:ARKR - Get Free Report ) in a research report issued on Monday. The firm set a \"buy\" rating on the restaurant operator's stock. Separately, TheStreet raised Ark Restaurants from a \"c\" rating to a \"b-\" rating in a research ...",
+      "banner_image": "https://www.marketbeat.com/logos/ark-restaurants-corp-logo.png?v=20230104112742",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Retail & Wholesale",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.980922"
+        }
+      ],
+      "overall_sentiment_score": 0.359005,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "ARKR",
+          "relevance_score": "0.848503",
+          "ticker_sentiment_score": "0.573637",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Greenhill & Co., Inc.  ( NYSE:GHL )  Coverage Initiated by Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/greenhill-co-inc-nyseghl-coverage-initiated-by-analysts-at-stocknews-com.html",
+      "time_published": "20231211T061444",
+      "authors": ["Defense World Staff"],
+      "summary": "StockNews.com started coverage on shares of Greenhill & Co., Inc. ( NYSE:GHL - Get Free Report ) in a research note issued to investors on Monday. The firm set a \"hold\" rating on the financial services provider's stock.",
+      "banner_image": "https://www.marketbeat.com/logos/greenhill--co-inc-logo.jpg",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.980922"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.650727"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.108179"
+        }
+      ],
+      "overall_sentiment_score": 0.237961,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Vista Gold  ( NYSE:VGZ )  Receives New Coverage from Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/vista-gold-nysevgz-receives-new-coverage-from-analysts-at-stocknews-com-2.html",
+      "time_published": "20231211T061444",
+      "authors": ["Defense World Staff"],
+      "summary": "Analysts at StockNews.com started coverage on shares of Vista Gold ( NYSE:VGZ - Get Free Report ) in a note issued to investors on Monday. The brokerage set a \"hold\" rating on the stock. VGZ opened at $0.36 on Monday. The firm has a market cap of $43.95 million, a P/E ratio of -7.26 and a beta ...",
+      "banner_image": "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/vista-gold-corp-logo.png?v=20230605112749&w=240&h=240&zc=2",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.714479"
+        },
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.99999"
+        }
+      ],
+      "overall_sentiment_score": 0.413002,
+      "overall_sentiment_label": "Bullish",
+      "ticker_sentiment": []
+    },
+    {
+      "title": "Comstock  ( NYSE:LODE )  Now Covered by StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/comstock-nyselode-now-covered-by-stocknews-com.html",
+      "time_published": "20231211T061443",
+      "authors": ["Defense World Staff"],
+      "summary": "Investment analysts at StockNews.com began coverage on shares of Comstock ( NYSE:LODE - Get Free Report ) in a report issued on Monday. The brokerage set a \"sell\" rating on the stock. Shares of NYSE LODE opened at $0.47 on Monday.",
+      "banner_image": "https://www.marketbeat.com/logos/comstock-inc-logo.png?v=20230718054302",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.99793"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.917436"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.108179"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.304875,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BLK",
+          "relevance_score": "0.16171",
+          "ticker_sentiment_score": "0.290593",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "STT",
+          "relevance_score": "0.16171",
+          "ticker_sentiment_score": "0.290593",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "AWON",
+          "relevance_score": "0.081276",
+          "ticker_sentiment_score": "0.001022",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "StockNews.com Initiates Coverage on Textainer Group  ( NYSE:TGH ) ",
+      "url": "https://www.defenseworld.net/2023/12/11/stocknews-com-initiates-coverage-on-textainer-group-nysetgh-2.html",
+      "time_published": "20231211T061443",
+      "authors": ["Defense World Staff"],
+      "summary": "Stock analysts at StockNews.com began coverage on shares of Textainer Group ( NYSE:TGH - Get Free Report ) in a research note issued on Monday. The firm set a \"hold\" rating on the transportation company's stock. Separately, B.",
+      "banner_image": "https://www.marketbeat.com/logos/textainer-group-holdings-limited-logo.png?v=20221129142640",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999365"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.891286"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.233746,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "TFC",
+          "relevance_score": "0.074001",
+          "ticker_sentiment_score": "0.176808",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "BK",
+          "relevance_score": "0.147366",
+          "ticker_sentiment_score": "0.22027",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "TGH",
+          "relevance_score": "0.806505",
+          "ticker_sentiment_score": "0.384881",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "DSSMY",
+          "relevance_score": "0.147366",
+          "ticker_sentiment_score": "0.22027",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Holly Energy Partners  ( NYSE:HEP )  Receives New Coverage from Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/holly-energy-partners-nysehep-receives-new-coverage-from-analysts-at-stocknews-com.html",
+      "time_published": "20231211T061443",
+      "authors": ["Defense World Staff"],
+      "summary": "Equities researchers at StockNews.com assumed coverage on shares of Holly Energy Partners ( NYSE:HEP - Get Free Report ) in a report issued on Monday. The firm set a \"buy\" rating on the pipeline company's stock.",
+      "banner_image": "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/holly-energy-partners-lp-logo.gif&w=240&h=240&zc=2",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.99977"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.857896"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.329285,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "LPLA",
+          "relevance_score": "0.120733",
+          "ticker_sentiment_score": "0.232271",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "C",
+          "relevance_score": "0.060541",
+          "ticker_sentiment_score": "0.070041",
+          "ticker_sentiment_label": "Neutral"
+        }
+      ]
+    },
+    {
+      "title": "StockNews.com Initiates Coverage on CPI Aerostructures  ( NYSEAMERICAN:CVU ) ",
+      "url": "https://www.defenseworld.net/2023/12/11/stocknews-com-initiates-coverage-on-cpi-aerostructures-nyseamericancvu.html",
+      "time_published": "20231211T061443",
+      "authors": ["Defense World Staff"],
+      "summary": "Investment analysts at StockNews.com started coverage on shares of CPI Aerostructures ( NYSEAMERICAN:CVU - Get Free Report ) in a note issued to investors on Monday. The brokerage set a \"buy\" rating on the aerospace company's stock. Shares of CVU stock opened at $2.64 on Monday.",
+      "banner_image": "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cpi-aerostructures-inc-logo.png&w=240&h=240&zc=2",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.928139"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.929393"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.795202"
+        }
+      ],
+      "overall_sentiment_score": 0.267044,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "CVU",
+          "relevance_score": "0.877135",
+          "ticker_sentiment_score": "0.447904",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Teck Resources  ( NYSE:TECK )  Now Covered by Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/teck-resources-nyseteck-now-covered-by-analysts-at-stocknews-com.html",
+      "time_published": "20231211T061443",
+      "authors": ["Defense World Staff"],
+      "summary": "Equities research analysts at StockNews.com assumed coverage on shares of Teck Resources ( NYSE:TECK - Get Free Report ) ( TSE:TECK ) in a note issued to investors on Monday. The firm set a \"hold\" rating on the basic materials company's stock. Other equities analysts also recently issued ...",
+      "banner_image": "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/teck-resources-limited-logo.png?v=20221104113200&w=240&h=240&zc=2",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.99999"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.77141"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "1.0"
+        }
+      ],
+      "overall_sentiment_score": 0.25155,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BNS",
+          "relevance_score": "0.060388",
+          "ticker_sentiment_score": "0.061054",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "JPM",
+          "relevance_score": "0.060388",
+          "ticker_sentiment_score": "0.061054",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "MS",
+          "relevance_score": "0.060388",
+          "ticker_sentiment_score": "0.061054",
+          "ticker_sentiment_label": "Neutral"
+        },
+        {
+          "ticker": "TCKRF",
+          "relevance_score": "0.827318",
+          "ticker_sentiment_score": "0.415428",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "American Realty Investors  ( NYSE:ARL )  Coverage Initiated by Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/american-realty-investors-nysearl-coverage-initiated-by-analysts-at-stocknews-com.html",
+      "time_published": "20231211T061443",
+      "authors": ["Defense World Staff"],
+      "summary": "Research analysts at StockNews.com began coverage on shares of American Realty Investors ( NYSE:ARL - Get Free Report ) in a report released on Monday. The firm set a \"hold\" rating on the financial services provider's stock.",
+      "banner_image": "https://www.marketbeat.com/logos/american-realty-investors-inc-logo.png?v=20220302155116",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.990999"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.818451"
+        },
+        {
+          "topic": "Real Estate & Construction",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.286383,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BLK",
+          "relevance_score": "0.163354",
+          "ticker_sentiment_score": "0.237485",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "STT",
+          "relevance_score": "0.082111",
+          "ticker_sentiment_score": "0.180586",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "ARL",
+          "relevance_score": "0.87799",
+          "ticker_sentiment_score": "0.475825",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "NTRS",
+          "relevance_score": "0.082111",
+          "ticker_sentiment_score": "0.180586",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Agile Therapeutics  ( NASDAQ:AGRX )  Research Coverage Started at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/agile-therapeutics-nasdaqagrx-research-coverage-started-at-stocknews-com.html",
+      "time_published": "20231211T061442",
+      "authors": ["Defense World Staff"],
+      "summary": "Equities researchers at StockNews.com began coverage on shares of Agile Therapeutics ( NASDAQ:AGRX - Get Free Report ) in a research note issued on Monday. The firm set a \"hold\" rating on the specialty pharmaceutical company's stock.",
+      "banner_image": "https://www.marketbeat.com/logos/agile-therapeutics-inc-logo.JPG",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Life Sciences",
+          "relevance_score": "0.5"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.977154"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.650727"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.161647"
+        },
+        {
+          "topic": "Finance",
+          "relevance_score": "0.5"
+        }
+      ],
+      "overall_sentiment_score": 0.322994,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "BLK",
+          "relevance_score": "0.150592",
+          "ticker_sentiment_score": "0.24435",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "AGRX",
+          "relevance_score": "0.782863",
+          "ticker_sentiment_score": "0.509804",
+          "ticker_sentiment_label": "Bullish"
+        },
+        {
+          "ticker": "STT",
+          "relevance_score": "0.075635",
+          "ticker_sentiment_score": "0.192327",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        },
+        {
+          "ticker": "VIRT",
+          "relevance_score": "0.075635",
+          "ticker_sentiment_score": "0.192327",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    },
+    {
+      "title": "SemiLEDs  ( NASDAQ:LEDS )  Coverage Initiated at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/semileds-nasdaqleds-coverage-initiated-at-stocknews-com.html",
+      "time_published": "20231211T061442",
+      "authors": ["Defense World Staff"],
+      "summary": "Stock analysts at StockNews.com started coverage on shares of SemiLEDs ( NASDAQ:LEDS - Get Free Report ) in a note issued to investors on Monday. The firm set a \"sell\" rating on the semiconductor company's stock. Shares of SemiLEDs stock opened at $1.50 on Monday.",
+      "banner_image": "https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/semileds-co-logo.gif&w=240&h=240&zc=2",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.962106"
+        },
+        {
+          "topic": "Manufacturing",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.744043"
+        }
+      ],
+      "overall_sentiment_score": 0.272199,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "LEDS",
+          "relevance_score": "0.842524",
+          "ticker_sentiment_score": "0.448503",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "Fluent  ( NASDAQ:FLNT )  Coverage Initiated by Analysts at StockNews.com",
+      "url": "https://www.defenseworld.net/2023/12/11/fluent-nasdaqflnt-coverage-initiated-by-analysts-at-stocknews-com-2.html",
+      "time_published": "20231211T061442",
+      "authors": ["Defense World Staff"],
+      "summary": "Analysts at StockNews.com began coverage on shares of Fluent ( NASDAQ:FLNT - Get Free Report ) in a research report issued to clients and investors on Monday. The brokerage set a \"hold\" rating on the stock.",
+      "banner_image": "https://www.marketbeat.com/logos/fluent-logo.png",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.999864"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.947132"
+        },
+        {
+          "topic": "Mergers & Acquisitions",
+          "relevance_score": "0.108179"
+        }
+      ],
+      "overall_sentiment_score": 0.290865,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "FLNT",
+          "relevance_score": "0.851762",
+          "ticker_sentiment_score": "0.487009",
+          "ticker_sentiment_label": "Bullish"
+        }
+      ]
+    },
+    {
+      "title": "StockNews.com Initiates Coverage on iPower  ( NYSE:IPW ) ",
+      "url": "https://www.defenseworld.net/2023/12/11/stocknews-com-initiates-coverage-on-ipower-nyseipw.html",
+      "time_published": "20231211T061442",
+      "authors": ["Defense World Staff"],
+      "summary": "Equities researchers at StockNews.com began coverage on shares of iPower ( NYSE:IPW - Get Free Report ) in a report released on Monday. The firm set a \"hold\" rating on the stock. iPower stock opened at $0.55 on Monday.",
+      "banner_image": "https://www.marketbeat.com/logos/ipower-inc-logo.png?v=20230608061654",
+      "source": "Stocknews.com",
+      "category_within_source": "n/a",
+      "source_domain": "www.defenseworld.net",
+      "topics": [
+        {
+          "topic": "Economy - Monetary",
+          "relevance_score": "0.158519"
+        },
+        {
+          "topic": "Retail & Wholesale",
+          "relevance_score": "1.0"
+        },
+        {
+          "topic": "Financial Markets",
+          "relevance_score": "0.996023"
+        },
+        {
+          "topic": "Earnings",
+          "relevance_score": "0.875462"
+        }
+      ],
+      "overall_sentiment_score": 0.202403,
+      "overall_sentiment_label": "Somewhat-Bullish",
+      "ticker_sentiment": [
+        {
+          "ticker": "IPW",
+          "relevance_score": "0.881556",
+          "ticker_sentiment_score": "0.346122",
+          "ticker_sentiment_label": "Somewhat-Bullish"
+        }
+      ]
+    }
+  ]
+}
