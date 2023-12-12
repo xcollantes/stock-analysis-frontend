@@ -11,6 +11,7 @@ def show_news(symbol: str, count: 50 | 1000, height: None | int = None) -> None:
     Args:
         symbol: Stock symbol.
         count: Number of articles to show.
+        height: DataFrame height. By default, will fit contents.
     """
     articles_df, news_data_df = get_news_data(symbol, count)
 

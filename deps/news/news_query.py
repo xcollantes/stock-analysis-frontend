@@ -1,7 +1,6 @@
 """Process data for news feature about the selected stock."""
 
 import pandas as pd
-import json
 import logging
 import requests
 import streamlit as st
@@ -30,25 +29,6 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
     news_response: dict = _query_stock_news(symbol, count)
     news = news_response["feed"]
 
-    # articles_pd = pd.DataFrame = pd.json_normalize(
-    #     news,
-    #     record_path=["topics"],
-    #     record_prefix="topics.",
-    #     meta=[
-    #         "title",
-    #         "url",
-    #         "time_published",
-    #         "authors",
-    #         "summary",
-    #         "banner_image",
-    #         "source",
-    #         "category_within_source",
-    #         "source_domain",
-    #         "overall_sentiment_score",
-    #         "overall_sentiment_label",
-    #     ],
-    # )
-
     # Using URL as the common key to merge the 2 DataFrames
     normalized_articles_pd: pd.DataFrame = pd.json_normalize(
         news,
@@ -68,10 +48,6 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
             "overall_sentiment_label",
         ],
     )
-
-    # normalized_articles_pd: pd.DataFrame = pd.merge(
-    #     left=articles_pd, right=sentiment_pd, on="url"
-    # )
 
     normalized_articles_pd = normalized_articles_pd.astype(
         {
@@ -114,17 +90,10 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
     return presentable_articles_pd, normalized_articles_pd
 
 
-def get_news_sentiment(symbol: str):
-    """Get sentiment from news articles.
-
-    Data is coupled with the same call as the news articles themselves.
-    """
-
-    return _query_stock_news(symbol)
-
-
-@st.cache_data(show_spinner="Getting news articles...")
-def _query_stock_news(symbol: str, count: 50 | 1000):
+@st.cache_data(
+    show_spinner="Getting news articles, calculating relevance and sentiment..."
+)
+def _query_stock_news(symbol: str, count: 50 | 1000) -> dict:
     """Show news on a selected stock symbol.
 
     Limit is either 50 or 1000.
@@ -145,17 +114,5 @@ def _query_stock_news(symbol: str, count: 50 | 1000):
         + f"&apikey={st.secrets.alphavantage.apikey}"
     )
 
-    # with open("test_data.json", "r") as testdata:
-    #     response = json.load(testdata)
-    response_pd = requests.get(url)
-    return response_pd.json()
-    # return response.json()
-
-    # return st.components.v1.iframe(
-    #     # f"https://news.google.com/search?q=why%20did%20{symbol}%20stock%20drop%20today&hl=en-US&gl=US&ceid=US%3Aen",
-    #     "https://www.bing.com/news/search?q=why+did+googl+stock+fall&FORM=HDRSC7",
-    #     # "https://www.bloomberg.com/",
-    #     width=800,
-    #     height=700,
-    #     scrolling=True,
-    # )
+    response: requests.Response = requests.get(url)
+    return response.json()
