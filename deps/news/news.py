@@ -14,7 +14,45 @@ def show_news(symbol: str, count: 50 | 1000, height: None | int = None) -> None:
     """
     articles_df, news_data_df = get_news_data(symbol, count)
 
-    st.dataframe(news_data_df)
+    ticker_scores_df: pd.DataFrame = news_data_df[
+        [
+            "url",
+            "ticker_sentiment.ticker",
+            "ticker_sentiment.relevance_score",
+            "ticker_sentiment.ticker_sentiment_score",
+        ]
+    ]
+
+    ticker_scores_df["weighted_score"] = (
+        ticker_scores_df["ticker_sentiment.relevance_score"]
+        * ticker_scores_df["ticker_sentiment.ticker_sentiment_score"]
+    )
+
+    weighted_sentiment_avg: float = (
+        ticker_scores_df["weighted_score"].sum()
+        / ticker_scores_df["ticker_sentiment.relevance_score"].sum()
+    )
+
+    st.write(f"{symbol.upper()} sentiment score of top 1,000 news recent articles.")
+
+    st.write(round(weighted_sentiment_avg, 4))
+
+    with st.expander("Data explanation"):
+        st.write(
+            f"{symbol.upper()} sentiment score of top 1,000 news recent articles. "
+            + "Sentiment scores are weighted with article relevance."
+        )
+        st.write(
+            "Data source, https://www.alphavantage.co, computes the relevance and sentiment for each article."
+        )
+        st.write(
+            "One article has many symbols; for example, an article 'Tech stocks rise' may have multiple symbols such as GOOGL, META, AMZN. Each symbol is assigned relevance and sentiment scores."
+        )
+        st.write(
+            "A weighted average is taken of symbol sentiments for calculating overall market news sentiment."
+        )
+        st.latex("{Weighted Mean} = {\sum_{i=1}^{n} w_i \cdot x_i}{\sum_{i=1}^{n} w_i}")
+
     st.data_editor(
         articles_df,
         height=height,
@@ -26,12 +64,6 @@ def show_news(symbol: str, count: 50 | 1000, height: None | int = None) -> None:
         },
         hide_index=True,
     )
-
-    # for idx in range(len(columns)):
-    #     article = articles[idx]
-
-    #     columns[idx].write(f"[{article['title']}]({article['url']})")
-    #     columns[idx].image(article["banner_image"], caption=article["summary"])
 
 
 def show_sentiment_from_news(symbol: str):

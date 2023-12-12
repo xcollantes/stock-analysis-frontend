@@ -30,10 +30,30 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
     news_response: dict = _query_stock_news(symbol, count)
     news = news_response["feed"]
 
-    articles_pd = pd.DataFrame = pd.json_normalize(
+    # articles_pd = pd.DataFrame = pd.json_normalize(
+    #     news,
+    #     record_path=["topics"],
+    #     record_prefix="topics.",
+    #     meta=[
+    #         "title",
+    #         "url",
+    #         "time_published",
+    #         "authors",
+    #         "summary",
+    #         "banner_image",
+    #         "source",
+    #         "category_within_source",
+    #         "source_domain",
+    #         "overall_sentiment_score",
+    #         "overall_sentiment_label",
+    #     ],
+    # )
+
+    # Using URL as the common key to merge the 2 DataFrames
+    normalized_articles_pd: pd.DataFrame = pd.json_normalize(
         news,
-        record_path=["topics"],
-        record_prefix="topics.",
+        record_path=["ticker_sentiment"],
+        record_prefix="ticker_sentiment.",
         meta=[
             "title",
             "url",
@@ -49,23 +69,15 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
         ],
     )
 
-    # Using URL as the common key to merge the 2 DataFrames
-    sentiment_pd: pd.DataFrame = pd.json_normalize(
-        news,
-        record_path=["ticker_sentiment"],
-        record_prefix="ticker_sentiment.",
-        meta=["url"],
-    )
-
-    normalized_articles_pd: pd.DataFrame = pd.merge(
-        left=articles_pd, right=sentiment_pd, on="url"
-    )
+    # normalized_articles_pd: pd.DataFrame = pd.merge(
+    #     left=articles_pd, right=sentiment_pd, on="url"
+    # )
 
     normalized_articles_pd = normalized_articles_pd.astype(
         {
             "ticker_sentiment.ticker_sentiment_score": float,
+            "ticker_sentiment.relevance_score": float,
             "overall_sentiment_score": float,
-            "topics.relevance_score": float,
         }
     )
 
@@ -76,7 +88,8 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
 
     # Filter only relevant articles
     normalized_articles_pd = normalized_articles_pd[
-        normalized_articles_pd["topics.relevance_score"] > relevance_lower_threshold
+        normalized_articles_pd["ticker_sentiment.relevance_score"]
+        > relevance_lower_threshold
     ]
 
     # User facing for Streamlit
@@ -88,13 +101,13 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
                 "time_published",
                 "source",
                 "summary",
+                "ticker_sentiment.relevance_score",
                 "overall_sentiment_label",
-                "overall_sentiment_score",
                 "url",
-                "topics.relevance_score",
+                "overall_sentiment_score",
             ]
         ]
-        .sort_values("topics.relevance_score", ascending=False)
+        .sort_values("ticker_sentiment.relevance_score", ascending=False)
         .drop_duplicates("url")
     )
 
