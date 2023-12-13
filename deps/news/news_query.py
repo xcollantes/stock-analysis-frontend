@@ -92,7 +92,7 @@ def get_news_data(symbol: str, count: int) -> pd.DataFrame:
 @st.cache_data(
     show_spinner="Getting news articles, calculating relevance and sentiment..."
 )
-def _query_stock_news(symbol: str, count: 50 | 1000) -> dict:
+def _query_stock_news(symbol: str, count: int) -> dict:
     """Show news on a selected stock symbol.
 
     Limit is either 50 or 1000.

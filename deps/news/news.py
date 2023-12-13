@@ -5,7 +5,7 @@ import streamlit as st
 from deps.news.news_query import get_news_data
 
 
-def show_news(symbol: str, count: 50 | 1000, height: None | int = None) -> None:
+def show_news(symbol: str, count: int, height: None | int = None) -> None:
     """Show Streamlit visuals for news articles.
 
     Args:
@@ -45,7 +45,7 @@ def show_news(symbol: str, count: 50 | 1000, height: None | int = None) -> None:
         )
         st.write(
             """
-            **Sentiment score:** 
+            **Sentiment score:**
             - `x <= -0.35`: Bearish
             - `-0.35 < x <= -0.15`: Somewhat-Bearish
             - `-0.15 < x < 0.15`: Neutral
