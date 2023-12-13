@@ -44,6 +44,8 @@ def main() -> None:
             st.error(error_message)
         else:
             show_historical_chart(symbol_value.upper(), days_ago_input(selection_days))
+            st.write()
+            show_news(symbol_value, 1000)
             st.write("### Competitor benchmarks")
             st.write(
                 "If a company fundamentals outperform competitors, this would be a signal of an opportunity."
@@ -51,8 +53,6 @@ def main() -> None:
             show_financial_metrics_competitors_chart(symbol_value)
             show_house_trades_dataframe(symbol_value)
             show_senate_trades_dataframe(symbol_value)
-            # Moved to bottom of this page due to slowness
-            show_news(symbol_value, 1000)
 
 
 if __name__ == "__main__":
