@@ -5,7 +5,7 @@ import streamlit as st
 from deps.news.news_query import get_news_data
 
 
-def show_news(symbol: str, count: int, height: None | int = None) -> None:
+def show_news(symbol: str, count: int, height: any = None) -> None:
     """Show Streamlit visuals for news articles.
 
     Args:
