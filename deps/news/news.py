@@ -64,12 +64,14 @@ def show_news(symbol: str, count: int, height: any = None) -> None:
         )
         st.latex("{Weighted Mean} = {\sum_{i=1}^{n} w_i \cdot x_i}{\sum_{i=1}^{n} w_i}")
 
-    articles_df.style.background_gradient(
-        subset=["ticker_sentiment.ticker_sentiment_score"],
-        vmin=(-0.40),
-        vmax=0.40,
-        cmap="Greens",
-    )
+    articles_df.style.background_gradient(subset=["PercentDayChange"], cmap="autumn")
+
+    # background_gradient(
+    #     subset=["ticker_sentiment.ticker_sentiment_score"],
+    #     vmin=(-0.40),
+    #     vmax=0.40,
+    #     cmap="Greens",
+    # )
 
     st.dataframe(articles_df)
     st.data_editor(
@@ -83,7 +85,3 @@ def show_news(symbol: str, count: int, height: any = None) -> None:
         },
         hide_index=True,
     )
-
-
-def show_sentiment_from_news(symbol: str):
-    """Sentiment score from news articles."""
