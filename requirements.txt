@@ -78,7 +78,8 @@ tzdata==2023.3
 tzlocal==4.3.1
 urllib3==1.26.16
 validators==0.21.2
+watchdog==3.0.0
 webencodings==0.5.1
 wrapt==1.15.0
-yfinance==0.2.32
+yfinance==0.2.33
 zipp==3.16.2
