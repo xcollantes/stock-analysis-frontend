@@ -188,6 +188,9 @@ def show_financial_metrics_competitors_chart(symbol: str) -> None:
         except KeyError as ke:
             logging.warn("Could not get metrics for %s: %s: %s", comp_symbol, ke, ke)
 
+    if show_combined_df.empty() or combined_df.empty():
+        logging.warning("DataFrames are empty.")
+
     st.write(
         show_combined_df.style.format(
             formatter={

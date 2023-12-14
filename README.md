@@ -58,3 +58,26 @@ Example: `pages/1_📈_Plotting_Demo.py`
 - Url path: https://mystreamlit.streamlit.app/Plotting_Demo
 
 [Streamlit docs](https://docs.streamlit.io/library/get-started/multipage-apps/create-a-multipage-app#convert-an-existing-app-into-a-multipage-app)
+
+## Common debugging issues
+
+**Yahoo Finance.**
+
+yfinance API is the weakest part of this project because it is a free resource
+which scrapes Yahoo Finance data. Check functions that make contact with Yahoo
+Finance first.
+
+https://github.com/xcollantes/stock-analysis-frontend/issues/35
+
+**TypeError: 'DataFrame' object is not callable.**
+
+Error message is often misleading and usually is actually the failure of the
+yfinance API. Either update the library or wait 24 hours for any limits to
+replenish.
+
+After checking the Yahoo Finance, check other keys for the other data sources.
+
+**Enter password showing up in the middle of the page.**
+
+The rest of the page could not load because the feature fell back on the
+password box.
