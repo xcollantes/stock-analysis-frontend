@@ -1,7 +1,6 @@
 """Individual stock dashboard."""
 
 
-from deps.news.news import show_news
 from deps.page_config import PageConfig
 
 # Must be at top of page: https://github.com/xcollantes/stock-analysis-frontend/issues/29
