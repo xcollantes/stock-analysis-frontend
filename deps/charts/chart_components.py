@@ -1,10 +1,8 @@
 """Chart visualizations."""
 
-from cProfile import label
 import altair as alt
 import pandas as pd
 
-import streamlit as st
 
 WIDTH = 2100
 
