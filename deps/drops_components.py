@@ -1,8 +1,8 @@
 """Component DataFrames of largest drops."""
 
 import pandas as pd
+from deps.finnhub import get_finnhub_company_metrics
 import streamlit as st
-from deps.yahoo import get_yahoo_overview_company_metrics
 
 from deps.fmp import get_top_losing
 from deps.github import get_static_company_data
@@ -145,7 +145,7 @@ class TopDrops:
         )
 
         for symbol in top_losses_df["symbol"]:
-            overview_info_df: pd.DataFrame = get_yahoo_overview_company_metrics(symbol)
+            overview_info_df: pd.DataFrame = get_finnhub_company_metrics(symbol)
             yahoo_intermediary_df.loc[len(yahoo_intermediary_df)] = [
                 overview_info_df[0],
                 overview_info_df[1],
