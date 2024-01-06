@@ -17,6 +17,7 @@ from deps.charts.charts import (
 )
 from deps.insider_watch import show_house_trades_dataframe, show_senate_trades_dataframe
 from passphrase.utils import is_auth
+from deps.news_deps.news_render import show_news
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
