@@ -38,5 +38,6 @@ def main():
 
 
 if __name__ == "__main__":
-    logging.info("%s running", os.path.basename(__file__))
-    is_auth(main, url_args)
+    main()
+    # logging.info("%s running", os.path.basename(__file__))
+    # is_auth(main, url_args)

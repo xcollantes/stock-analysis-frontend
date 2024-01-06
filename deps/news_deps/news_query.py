@@ -8,6 +8,7 @@ import streamlit as st
 ALPHAVANTAGE_KEY: str = st.secrets.alphavantage.apikey
 
 
+@st.cache_data(show_spinner="Gathering news data ...")
 def get_news_data(symbol: str, count: int) -> pd.DataFrame:
     """News sources must be cleaned and turned into DataFrame.
 
