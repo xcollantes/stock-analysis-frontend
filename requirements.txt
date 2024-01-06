@@ -56,5 +56,5 @@ tzlocal==5.2
 urllib3==2.1.0
 validators==0.22.0
 webencodings==0.5.1
-yfinance==0.2.29
+yfinance==0.2.33
 zipp==3.17.0
