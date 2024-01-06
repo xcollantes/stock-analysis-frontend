@@ -93,12 +93,12 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
     )
 
     # Assuming Yahoo Finance returns next earnings as first row
-    next_earnings_call_date: datetime = earnings_beat_df.loc[0, "Date"]
-    st.write(
-        f"**{next_earnings_call_date.strftime('%a, %d %b %Y')}** is the next earnings call estimated date "
-        + f"in {(datetime.today().date() - datetime.date(next_earnings_call_date)).days * -1} days "
-        + f"[[Add to Google Calendar]({add_to_google_calendar(symbol, next_earnings_call_date)})]"
-    )
+    # next_earnings_call_date: datetime = earnings_beat_df.loc[0, "Date"]
+    # st.write(
+    #     f"**{next_earnings_call_date.strftime('%a, %d %b %Y')}** is the next earnings call estimated date "
+    #     + f"in {(datetime.today().date() - datetime.date(next_earnings_call_date)).days * -1} days "
+    #     + f"[[Add to Google Calendar]({add_to_google_calendar(symbol, next_earnings_call_date)})]"
+    # )
 
 
 def show_financial_metrics_competitors_chart(symbol: str) -> None:
