@@ -92,6 +92,9 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
         use_container_width=True,
     )
 
+    # Turned off feature due to stalling:
+    # https://github.com/xcollantes/stock-analysis-frontend/issues/40
+    #
     # Assuming Yahoo Finance returns next earnings as first row
     # next_earnings_call_date: datetime = earnings_beat_df.loc[0, "Date"]
     # st.write(
