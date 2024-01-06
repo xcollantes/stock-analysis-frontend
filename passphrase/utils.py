@@ -1,6 +1,9 @@
 """Utils for checking passphrase."""
 
+import logging
 import streamlit as st
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 def is_auth(main, url_args) -> None:
@@ -19,6 +22,8 @@ def is_auth(main, url_args) -> None:
         return show_login()
     except KeyError:
         return show_login()
+    except Exception as e:
+        logging.error("ERROR: %s", e)
 
 
 def show_login() -> None:
