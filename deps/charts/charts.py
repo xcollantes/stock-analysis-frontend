@@ -1,11 +1,9 @@
 """Charts."""
 
-from datetime import datetime, timedelta
 import logging
 import altair as alt
 import pandas as pd
-from deps.calendar import add_to_google_calendar
-from deps.finnhub import get_company_competitors
+from deps.finnhub import get_company_competitors, get_finnhub_earnings_surprises
 import streamlit as st
 
 from deps.charts.chart_components import (
@@ -15,7 +13,6 @@ from deps.charts.chart_components import (
 )
 from deps.yahoo import (
     get_company_yahoo,
-    get_earnings_surprises_yahoo,
     get_historic_prices,
 )
 
@@ -50,8 +47,9 @@ def show_historical_chart(symbol: str, days_ago: int) -> None:
     # Earnings graph looks awkward where last earnings call was recent and the
     # next earnings call is in ~90 days.  Remove the earnings graph completely
     # if days duration selection is too low.
-    earnings_beat_df: pd.DataFrame = get_earnings_surprises_yahoo(
-        symbol, days_ago=days_ago, show_next=(True if days_ago >= 60 else False)
+    earnings_beat_df: pd.DataFrame = get_finnhub_earnings_surprises(
+        symbol,
+        days_ago=days_ago,
     )  # Get last x quarters
 
     a_row = info_df.loc[0]

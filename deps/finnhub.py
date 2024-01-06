@@ -10,9 +10,11 @@ import streamlit as st
 
 FINNHUB_KEY: str = st.secrets.finnhub.apikey
 
+logging.basicConfig(level=logging.DEBUG)
+
 
 @st.cache_data(show_spinner="Querying company data ...")
-def _get_finnhub_company_metrics(symbol: str) -> json:
+def _call_finnhub_company_metrics(symbol: str) -> json:
     """Gets all metrics for company including historical prices."""
     try:
         logging.info("API call: Finnhub.io: Company overall metrics")
@@ -30,8 +32,9 @@ def _get_finnhub_company_metrics(symbol: str) -> json:
 def get_finnhub_company_metrics(symbol: str) -> tuple[str, str, str, str]:
     symbol = symbol.upper()
 
-    all_company_metrics = _get_finnhub_company_metrics(symbol)
-    metrics = all_company_metrics["metrics"]
+    all_company_metrics = _call_finnhub_company_metrics(symbol)
+    logging.debug(all_company_metrics)
+    metrics = all_company_metrics["metric"]
 
     return (
         metrics["marketCapitalization"],
@@ -60,7 +63,7 @@ def get_finnhub_earnings_surprises(symbol: str, days_ago: int = 365) -> pd.DataF
     """
     finnhub_df: pd.DataFrame = _get_finnhub_earnings_data(symbol)
 
-    diff_date: datetime = datetime.now() - datetime.timedelta(days=days_ago)
+    diff_date: datetime = datetime.datetime.now() - datetime.timedelta(days=days_ago)
     earliest_earnings_date: str = diff_date.strftime("%Y-%m-%d")
 
     finnhub_dated_df = finnhub_df[finnhub_df["period"] >= earliest_earnings_date]
@@ -78,8 +81,6 @@ def get_finnhub_earnings_surprises(symbol: str, days_ago: int = 365) -> pd.DataF
     )
 
     return result_df.reset_index(drop=True)
-
-
 
 
 @st.cache_data(show_spinner="Querying competitor data ...")

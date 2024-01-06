@@ -50,4 +50,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     logging.info("Running")
-    is_auth(main, url_args)
+    main()
+    # is_auth(main, url_args)

@@ -11,79 +11,79 @@ from deps.common.utils import dict_check
 
 
 # DONE
-@st.cache_data(show_spinner="Query company metrics ...")
-def get_yahoo_overview_company_metrics(symbol: str) -> tuple[str, str, str, str]:
-    """Get specific metrics for a company by calling API.
+# @st.cache_data(show_spinner="Query company metrics ...")
+# def get_yahoo_overview_company_metrics(symbol: str) -> tuple[str, str, str, str]:
+#     """Get specific metrics for a company by calling API.
 
-    These metrics change over time as opposed to the static company data.
-    """
-    logging.info("API call: Yahoo Finance: select metrics")
-    ticker = yf.Ticker(symbol)
-    return (
-        dict_check(ticker.info, "marketCap"),
-        dict_check(ticker.info, "volume"),
-        dict_check(ticker.info, "fiftyTwoWeekLow"),
-        dict_check(ticker.info, "fiftyTwoWeekHigh"),
-    )
+#     These metrics change over time as opposed to the static company data.
+#     """
+#     logging.info("API call: Yahoo Finance: select metrics")
+#     ticker = yf.Ticker(symbol)
+#     return (
+#         dict_check(ticker.info, "marketCap"),
+#         dict_check(ticker.info, "volume"),
+#         dict_check(ticker.info, "fiftyTwoWeekLow"),
+#         dict_check(ticker.info, "fiftyTwoWeekHigh"),
+#     )
 
 
 # DONE
-@st.cache_data(show_spinner="Querying earnings results ...")
-def get_earnings_surprises_yahoo(
-    symbol: str, days_ago: int = 365, show_next: bool = True
-) -> pd.DataFrame:
-    """Return DataFrame with earnings dates and results.
+# @st.cache_data(show_spinner="Querying earnings results ...")
+# def get_earnings_surprises_yahoo(
+#     symbol: str, days_ago: int = 365, show_next: bool = True
+# ) -> pd.DataFrame:
+#     """Return DataFrame with earnings dates and results.
 
-    Also returns next 4 earnings calls. The limit includes the next 4 earnings
-    as the latest 4 entries.
-    """
-    logging.info("API call: Yahoo Finance: Earnings surprises")
-    result: pd.DataFrame = pd.DataFrame(
-        columns=[
-            "EstimatedEarning",
-            "ActualEarning",
-            "SurprisePercent",
-        ]
-    )
+#     Also returns next 4 earnings calls. The limit includes the next 4 earnings
+#     as the latest 4 entries.
+#     """
+#     logging.info("API call: Yahoo Finance: Earnings surprises")
+#     result: pd.DataFrame = pd.DataFrame(
+#         columns=[
+#             "EstimatedEarning",
+#             "ActualEarning",
+#             "SurprisePercent",
+#         ]
+#     )
 
-    ticker = yf.Ticker(symbol)
+#     ticker = yf.Ticker(symbol)
 
-    if ticker:
-        earnings_dates = ticker.get_earnings_dates(
-            limit=20
-        )  # Include future earnings dates always
-        if earnings_dates is not None:
-            earning_df = earnings_dates.rename(
-                columns={
-                    "EPS Estimate": "EstimatedEarning",
-                    "Reported EPS": "ActualEarning",
-                    "Surprise(%)": "SurprisePercent",
-                }
-            )
-            earning_df["Date"] = earning_df.index
-            if show_next:
-                # Drop if no result and no expected for future earnings dates
-                result = earning_df.dropna(subset=["EstimatedEarning"]).reset_index(
-                    drop=True
-                )
-            else:
-                # Drop if no future earnings dates
-                result = earning_df.dropna(subset=["ActualEarning"]).reset_index(
-                    drop=True
-                )
+#     if ticker:
+#         earnings_dates = ticker.get_earnings_dates(
+#             limit=20
+#         )  # Include future earnings dates always
+#         if earnings_dates is not None:
+#             earning_df = earnings_dates.rename(
+#                 columns={
+#                     "EPS Estimate": "EstimatedEarning",
+#                     "Reported EPS": "ActualEarning",
+#                     "Surprise(%)": "SurprisePercent",
+#                 }
+#             )
+#             earning_df["Date"] = earning_df.index
+#             if show_next:
+#                 # Drop if no result and no expected for future earnings dates
+#                 result = earning_df.dropna(subset=["EstimatedEarning"]).reset_index(
+#                     drop=True
+#                 )
+#             else:
+#                 # Drop if no future earnings dates
+#                 result = earning_df.dropna(subset=["ActualEarning"]).reset_index(
+#                     drop=True
+#                 )
 
-            # Result from Yahoo Finance is unpredictable: 4 max future earnings
-            # or fewer so take the 20 last periods and cut earliest dates to fit
-            # graph
-            result = result[
-                result["Date"]
-                >= (datetime.now() - timedelta(days_ago)).strftime("%Y-%m-%d")
-            ]
+#             # Result from Yahoo Finance is unpredictable: 4 max future earnings
+#             # or fewer so take the 20 last periods and cut earliest dates to fit
+#             # graph
+#             result = result[
+#                 result["Date"]
+#                 >= (datetime.now() - timedelta(days_ago)).strftime("%Y-%m-%d")
+#             ]
 
-    else:
-        logging.error("Could not get earnings from Yahoo.")
+#     else:
+#         logging.error("Could not get earnings from Yahoo.")
 
-    return result
+#     return result
 
 
 # KEEP
@@ -113,30 +113,31 @@ def get_historic_prices(ticker_symbol: str, days_ago: int) -> pd.DataFrame:
     return history
 
 
-# NOT USED
-@st.cache_data(show_spinner="Converting metrics data frame ...")
-def handle_filter_metrics(ratio_df: pd.DataFrame) -> pd.DataFrame:
-    """Get only specific column metrics."""
-    result_df: pd.DataFrame = pd.DataFrame()
-    try:
-        result_df = ratio_df[
-            [
-                "symbol",
-                "grossProfits",
-                "revenueGrowth",
-                "freeCashflow",
-                "grossMargins",
-                "operatingMargins",
-                "trailingPegRatio",
-            ]
-        ]
-    except KeyError:
-        # If company has no columns for these metrics
-        pass
+# # NOT USED
+# @st.cache_data(show_spinner="Converting metrics data frame ...")
+# def handle_filter_metrics(ratio_df: pd.DataFrame) -> pd.DataFrame:
+#     """Get only specific column metrics."""
+#     result_df: pd.DataFrame = pd.DataFrame()
+#     try:
+#         result_df = ratio_df[
+#             [
+#                 "symbol",
+#                 "grossProfits",
+#                 "revenueGrowth",
+#                 "freeCashflow",
+#                 "grossMargins",
+#                 "operatingMargins",
+#                 "trailingPegRatio",
+#             ]
+#         ]
+#     except KeyError:
+#         # If company has no columns for these metrics
+#         pass
 
-    return result_df
+#     return result_df
 
 
+# KEEP
 @st.cache_data(show_spinner="Querying company data ...")
 def get_company_yahoo(symbol: str) -> pd.DataFrame:
     """Get all financial metrics, company details, and filing info for a company."""
