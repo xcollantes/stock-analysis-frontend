@@ -10,6 +10,7 @@ import yfinance as yf
 from deps.common.utils import dict_check
 
 
+# DONE
 @st.cache_data(show_spinner="Query company metrics ...")
 def get_yahoo_overview_company_metrics(symbol: str) -> tuple[str, str, str, str]:
     """Get specific metrics for a company by calling API.
@@ -26,6 +27,7 @@ def get_yahoo_overview_company_metrics(symbol: str) -> tuple[str, str, str, str]
     )
 
 
+# DONE
 @st.cache_data(show_spinner="Querying earnings results ...")
 def get_earnings_surprises_yahoo(
     symbol: str, days_ago: int = 365, show_next: bool = True
@@ -84,6 +86,7 @@ def get_earnings_surprises_yahoo(
     return result
 
 
+# KEEP
 @st.cache_data(show_spinner="Querying historical prices ...")
 def get_historic_prices(ticker_symbol: str, days_ago: int) -> pd.DataFrame:
     """Given a date range, returns historical price range.
@@ -110,6 +113,7 @@ def get_historic_prices(ticker_symbol: str, days_ago: int) -> pd.DataFrame:
     return history
 
 
+# NOT USED
 @st.cache_data(show_spinner="Converting metrics data frame ...")
 def handle_filter_metrics(ratio_df: pd.DataFrame) -> pd.DataFrame:
     """Get only specific column metrics."""
